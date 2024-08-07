@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxuijqcosdhwy"]
+
+[ext_resource type="Script" path="res://game_settings/self_files/settings.gd" id="1_miyjb"]
+[ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="1_yyr85"]
+[ext_resource type="Resource" uid="uid://do4ft6h8yi7f4" path="res://game_settings/settings/Sound/master/mute.tres" id="2_hwhqn"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="3_xdql4"]
+[ext_resource type="Resource" uid="uid://0yqrftcxxswm" path="res://game_settings/settings/Sound/master/volume.tres" id="4_53gbe"]
+[ext_resource type="Resource" uid="uid://dnpcq5fqxeq43" path="res://game_settings/settings/Sound/music/mute.tres" id="6_ci1l1"]
+[ext_resource type="PackedScene" path="res://game_settings/components/_misc_components/apply_btn/apply_btn.tscn" id="6_sku6s"]
+[ext_resource type="Resource" uid="uid://be2xhyrhcay4" path="res://game_settings/settings/Sound/music/volume.tres" id="7_cltg1"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_miyjb")
+
+[node name="SettingsBG" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -68.5
+offset_right = 300.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="SettingsBG"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SettingsView" type="VBoxContainer" parent="SettingsBG/Margin"]
+layout_mode = 2
+
+[node name="SettingsTitle" type="Label" parent="SettingsBG/Margin/SettingsView"]
+layout_mode = 2
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SettingsTabs" type="TabContainer" parent="SettingsBG/Margin/SettingsView"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 0
+
+[node name="Sound" type="VBoxContainer" parent="SettingsBG/Margin/SettingsView/SettingsTabs"]
+layout_mode = 2
+
+[node name="MasterMargin" type="MarginContainer" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="MasterVol" type="HBoxContainer" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MasterMargin"]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MasterMargin/MasterVol"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master"
+
+[node name="MasterMute" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MasterMargin/MasterVol" groups=["Settings"] instance=ExtResource("1_yyr85")]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+setting = ExtResource("2_hwhqn")
+
+[node name="VolSlider" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MasterMargin/MasterVol" groups=["Settings"] instance=ExtResource("3_xdql4")]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+setting = ExtResource("4_53gbe")
+
+[node name="Slider" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MasterMargin/MasterVol/VolSlider" index="0"]
+size_flags_horizontal = 1
+
+[node name="MusicMargin" type="MarginContainer" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="MusicVol" type="HBoxContainer" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MusicMargin"]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MusicMargin/MusicVol"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="MusicMute" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MusicMargin/MusicVol" groups=["Settings"] instance=ExtResource("1_yyr85")]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+setting = ExtResource("6_ci1l1")
+
+[node name="VolSlider" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MusicMargin/MusicVol" groups=["Settings"] instance=ExtResource("3_xdql4")]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+setting = ExtResource("7_cltg1")
+
+[node name="Slider" parent="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MusicMargin/MusicVol/VolSlider" index="0"]
+size_flags_horizontal = 1
+
+[node name="ConfirmBtn" parent="SettingsBG/Margin/SettingsView" instance=ExtResource("6_sku6s")]
+layout_mode = 2
+text = "Confirm"
+group = "Settings"
+
+[connection signal="pressed" from="SettingsBG/Margin/SettingsView/ConfirmBtn" to="." method="_on_confirm_btn_pressed"]
+
+[editable path="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MasterMargin/MasterVol/MasterMute"]
+[editable path="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MasterMargin/MasterVol/VolSlider"]
+[editable path="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MusicMargin/MusicVol/MusicMute"]
+[editable path="SettingsBG/Margin/SettingsView/SettingsTabs/Sound/MusicMargin/MusicVol/VolSlider"]

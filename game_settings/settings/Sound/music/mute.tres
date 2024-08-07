@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnpcq5fqxeq43"]
+
+[ext_resource type="Script" path="res://game_settings/templates/audio/audio_mute.gd" id="1_764wt"]
+
+[resource]
+resource_name = "music_mute"
+script = ExtResource("1_764wt")
+audio_bus = "Music"
+current = false
+default = false
+name = "music_mute"
+category = "Sound"
+value_type = 1
+value_hint = 0
+value_hint_string = ""

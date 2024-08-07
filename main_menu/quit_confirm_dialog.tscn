@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://byffiw1s5d4lw"]
+
+[ext_resource type="Script" path="res://main_menu/quit_confirm_dialog.gd" id="1_1f3me"]
+
+[node name="QuitConfirmDialog" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1f3me")
+
+[node name="DialogBG" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="DialogBG"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="DialogContainer" type="VBoxContainer" parent="DialogBG/Margin"]
+layout_mode = 2
+
+[node name="QuitTitle" type="Label" parent="DialogBG/Margin/DialogContainer"]
+layout_mode = 2
+text = "Quitting..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescSpacing" type="MarginContainer" parent="DialogBG/Margin/DialogContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="QuitDesc" type="Label" parent="DialogBG/Margin/DialogContainer/DescSpacing"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Are you sure you want to quit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YesNo" type="HBoxContainer" parent="DialogBG/Margin/DialogContainer"]
+layout_mode = 2
+
+[node name="YesBtn" type="Button" parent="DialogBG/Margin/DialogContainer/YesNo"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yes"
+
+[node name="NoBtn" type="Button" parent="DialogBG/Margin/DialogContainer/YesNo"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No"
+
+[connection signal="pressed" from="DialogBG/Margin/DialogContainer/YesNo/YesBtn" to="." method="_on_yes_btn_pressed"]
+[connection signal="pressed" from="DialogBG/Margin/DialogContainer/YesNo/NoBtn" to="." method="_on_no_btn_pressed"]

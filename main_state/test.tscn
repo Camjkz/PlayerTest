@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdg6vdfru716o"]
+
+[ext_resource type="PackedScene" uid="uid://cnfsne6jj1ki1" path="res://main_state/Player.tscn" id="1_4n63l"]
+[ext_resource type="PackedScene" uid="uid://cq2ltssjaa0ya" path="res://main_state/dummy.tscn" id="1_khq6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5payx"]
+size = Vector2(1280, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7ah4"]
+size = Vector2(16, 16)
+
+[node name="play" type="Node2D"]
+position = Vector2(300, 232)
+
+[node name="Dummy" parent="." instance=ExtResource("1_khq6l")]
+position = Vector2(-84, 320)
+
+[node name="Player" parent="." instance=ExtResource("1_4n63l")]
+position = Vector2(256, 312)
+
+[node name="SceneCam" type="Camera2D" parent="Player"]
+offset = Vector2(40, 0)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(400, 576)
+scale = Vector2(1.64, 1)
+
+[node name="GroundCollision" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_5payx")
+debug_color = Color(0.870588, 0.835294, 0.180392, 0.419608)
+
+[node name="GroundShape" type="Polygon2D" parent="Ground"]
+color = Color(0.486275, 0.258824, 0, 0.984314)
+polygon = PackedVector2Array(-640, -128, 640, -128, 640, 128, -640, 128)
+
+[node name="Wall1" type="StaticBody2D" parent="."]
+position = Vector2(-632, 304)
+scale = Vector2(1, 50)
+
+[node name="WallCollision" type="CollisionShape2D" parent="Wall1"]
+shape = SubResource("RectangleShape2D_q7ah4")
+
+[node name="Polygon2D" type="Polygon2D" parent="Wall1"]
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(1448, 304)
+scale = Vector2(1, 50)
+
+[node name="WallCollision" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource("RectangleShape2D_q7ah4")
+
+[node name="Polygon2D" type="Polygon2D" parent="Wall2"]
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

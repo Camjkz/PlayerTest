@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://do4ft6h8yi7f4"]
+
+[ext_resource type="Script" path="res://game_settings/templates/audio/audio_mute.gd" id="1_cs3ym"]
+
+[resource]
+resource_name = "master_mute"
+script = ExtResource("1_cs3ym")
+audio_bus = "Master"
+current = false
+default = false
+name = "master_mute"
+category = "Sound"
+value_type = 1
+value_hint = 0
+value_hint_string = ""
