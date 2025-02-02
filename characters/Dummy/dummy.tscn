@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq2ltssjaa0ya"]
+[gd_scene load_steps=7 format=3 uid="uid://cq2ltssjaa0ya"]
 
 [ext_resource type="Texture2D" uid="uid://dai6j73v1l45a" path="res://icon.svg" id="1_v6l1u"]
-[ext_resource type="Script" path="res://main_state/dummy.gd" id="1_w0nla"]
-[ext_resource type="Script" path="res://main_state/hurtbox.gd" id="3_p8q0h"]
+[ext_resource type="Script" path="res://characters/Dummy/dummy.gd" id="1_w0nla"]
+[ext_resource type="Script" path="res://generics/hurtbox.gd" id="3_p8q0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb7c8"]
 size = Vector2(128, 128)
@@ -10,8 +10,13 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37nwr"]
 size = Vector2(128, 128)
 
-[node name="Dummy" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kv3wf"]
+size = Vector2(128, 128)
+
+[node name="Dummy" type="CharacterBody2D"]
+floor_stop_on_slope = false
 script = ExtResource("1_w0nla")
+slowdownMod = 50
 
 [node name="tempSprite" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, -1.90735e-06)
@@ -27,3 +32,12 @@ script = ExtResource("3_p8q0h")
 [node name="DummyHurtboxShape" type="CollisionShape2D" parent="DummyHurtbox"]
 shape = SubResource("RectangleShape2D_37nwr")
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="PushArea" type="Area2D" parent="."]
+
+[node name="Pushbox" type="CollisionShape2D" parent="PushArea"]
+shape = SubResource("RectangleShape2D_kv3wf")
+debug_color = Color(0.772549, 0.2, 0.960784, 0.419608)
+
+[connection signal="area_entered" from="PushArea" to="." method="_on_push_area_entered"]
+[connection signal="area_exited" from="PushArea" to="." method="_on_push_area_exited"]

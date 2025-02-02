@@ -13,4 +13,4 @@ func _on_area_entered(hitbox: HitBox) -> void:
 		return
 	else:
 		if owner.has_method("get_hit"):
-			owner.get_hit();
+			owner.get_hit(hitbox);

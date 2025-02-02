@@ -1,41 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdg6vdfru716o"]
+[gd_scene load_steps=6 format=3 uid="uid://cdg6vdfru716o"]
 
-[ext_resource type="PackedScene" uid="uid://cq2ltssjaa0ya" path="res://characters/Dummy/dummy.tscn" id="1_khq6l"]
-[ext_resource type="PackedScene" uid="uid://dp3i02gf7dvgm" path="res://characters/SonicPlayer/SonicPlayer.tscn" id="3_k4cma"]
+[ext_resource type="Script" path="res://main_state/play.gd" id="1_h5323"]
+[ext_resource type="PackedScene" uid="uid://cq2ltssjaa0ya" path="res://main_state/dummy.tscn" id="1_khq6l"]
+[ext_resource type="PackedScene" uid="uid://dp3i02gf7dvgm" path="res://characters/SonicPlayer.tscn" id="3_k4cma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5payx"]
-size = Vector2(1280, 232)
+size = Vector2(1280, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7ah4"]
 size = Vector2(16, 16)
 
 [node name="play" type="Node2D"]
 position = Vector2(300, 232)
+script = ExtResource("1_h5323")
+
+[node name="Dummy" parent="." instance=ExtResource("1_khq6l")]
+position = Vector2(-84, 320)
+
+[node name="SonicPlayer" parent="." instance=ExtResource("3_k4cma")]
+position = Vector2(180, 352)
+
+[node name="SceneCam" type="Camera2D" parent="SonicPlayer"]
+unique_name_in_owner = true
+offset = Vector2(40, 0)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(400, 576)
 scale = Vector2(1.64, 1)
 
 [node name="GroundCollision" type="CollisionShape2D" parent="Ground"]
-position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_5payx")
 debug_color = Color(0.870588, 0.835294, 0.180392, 0.419608)
 
 [node name="GroundShape" type="Polygon2D" parent="Ground"]
-color = Color(0.466667, 0.466667, 0.466667, 1)
+color = Color(0.486275, 0.258824, 0, 0.984314)
 polygon = PackedVector2Array(-640, -128, 640, -128, 640, 128, -640, 128)
-
-[node name="Dummy" parent="." instance=ExtResource("1_khq6l")]
-position = Vector2(-292, 328)
-
-[node name="SonicPlayer" parent="." instance=ExtResource("3_k4cma")]
-position = Vector2(-540, 328)
-
-[node name="SceneCam" type="Camera2D" parent="SonicPlayer"]
-offset = Vector2(40, 0)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-editor_draw_drag_margin = true
 
 [node name="Wall1" type="StaticBody2D" parent="."]
 position = Vector2(-632, 304)
