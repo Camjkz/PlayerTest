@@ -14,7 +14,7 @@ func enter():
 		animPlayer.play("land")
 
 func exit():
-	animPlayer.stop()
+	animPlayer.pause()
 
 func update(_delta: float):
 	var chosenState = ""

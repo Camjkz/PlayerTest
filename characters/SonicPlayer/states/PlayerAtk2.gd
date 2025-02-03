@@ -29,7 +29,7 @@ func enter():
 
 func exit():
 	lockDirection.emit(false)
-	animPlayer.stop()
+	animPlayer.pause()
 
 func update(_delta: float):
 	var chosenState = ""

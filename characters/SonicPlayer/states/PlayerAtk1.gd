@@ -26,7 +26,7 @@ func enter():
 func exit():
 	playerSprite.position.x = 0
 	lockDirection.emit(false)
-	animPlayer.stop()
+	animPlayer.pause()
 
 func update(_delta: float):
 	var chosenState = ""
