@@ -1,4 +1,5 @@
 extends Node
+class_name StateMachine
 
 @export var initialState: State
 var currentState: State
@@ -16,7 +17,10 @@ func _ready():
 		currentState = initialState
 
 func _physics_process(delta):
-	owner.set_player_velocity(delta)
+	if owner.has_method("set_char_velocity"):
+		owner.set_char_velocity(delta)
+	else:
+		print("RENAME YOUR SHIT")
 	if currentState:
 		currentState.physics_update(delta)
 	owner.move_and_slide()
@@ -39,4 +43,6 @@ func on_child_transition(state, new_state_name):
 	
 	newState.enter()
 	currentState = newState
+	if owner.name == "EmerlEnemy":
+		print(new_state_name)
 	

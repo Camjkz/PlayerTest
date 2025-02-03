@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdg6vdfru716o"]
+[gd_scene load_steps=7 format=3 uid="uid://cdg6vdfru716o"]
 
 [ext_resource type="PackedScene" uid="uid://cq2ltssjaa0ya" path="res://characters/Dummy/dummy.tscn" id="1_khq6l"]
 [ext_resource type="PackedScene" uid="uid://b5ktmlctsbml5" path="res://characters/EmerlEnemy/EmerlEnemy.tscn" id="3_d7ujw"]
 [ext_resource type="PackedScene" uid="uid://dp3i02gf7dvgm" path="res://characters/SonicPlayer/SonicPlayer.tscn" id="3_k4cma"]
+[ext_resource type="Script" path="res://main_state/checkFPS.gd" id="4_uboc8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5payx"]
 size = Vector2(1280, 232)
@@ -69,3 +70,6 @@ zoom = Vector2(0.8, 0.8)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
+
+[node name="checkFPS" type="Node" parent="."]
+script = ExtResource("4_uboc8")

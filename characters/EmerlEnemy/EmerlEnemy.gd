@@ -12,15 +12,39 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 @export var pushvelocityX : int = 600
 
 @onready var animPlayer : AnimationPlayer =  %AnimationPlayer
+@onready var stateMachine : StateMachine = %EnemyStateMachine
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animPlayer.play("idle")
+	#animPlayer.play("idle")
+	pass
 
 
 func _physics_process(delta):
+	pass
+	#if not is_on_floor():
+		#velocity.y += gravity * delta
+	#
+	#if hitknockbackX != 0 and canPush == false:
+		#velocity.x = hitknockbackX
+		#hitknockbackX = 0
+	#elif canPush == true:
+		#velocity.x = hitknockbackX + (pushvelocityX * pushDirection)
+		#hitknockbackX = 0
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, slowdownMod)
+		#
+	#if hitknockbackY != 0:
+		#velocity.y = hitknockbackY
+		#hitknockbackY = 0
+		#
+	#
+	#move_and_slide()
+
+
+func set_char_velocity(_delta: float):
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += gravity * _delta
 	
 	if hitknockbackX != 0 and canPush == false:
 		velocity.x = hitknockbackX
@@ -34,29 +58,35 @@ func _physics_process(delta):
 	if hitknockbackY != 0:
 		velocity.y = hitknockbackY
 		hitknockbackY = 0
-		
-	
-	move_and_slide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if gotHit:
-		gotHit = false
-		if abs(velocity.y) > abs(velocity.x):
-			animPlayer.play("get_hit_up")
-	else:
-		if is_on_floor():
-			animPlayer.play("idle")
+	pass
+	#if gotHit:
+		#gotHit = false
+		#if abs(velocity.y) > abs(velocity.x):
+			#animPlayer.play("knockback_up")
+	#else:
+		#if is_on_floor():
+			#animPlayer.play("idle")
 	
 
 func get_hit(hitbox: HitBox):
 	var parent = hitbox.owner
 	if parent != self:
 		print("Attack detected")
-		gotHit = true
+		#gotHit = true
 		hitknockbackX = hitbox.knockbackX * parent.side
 		hitknockbackY = hitbox.knockbackY
+		
+		var chosenHitState = "EnemyHitGrounded"
+		if hitknockbackY < 0 and abs(hitknockbackX) < abs(hitknockbackY) :
+			chosenHitState = "EnemyHitUp"
+		
+		stateMachine.on_child_transition(stateMachine.currentState, chosenHitState)
+		
+		
 
 
 func _on_push_area_entered(area : Area2D):

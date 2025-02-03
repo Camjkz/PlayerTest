@@ -1,9 +1,72 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5ktmlctsbml5"]
+[gd_scene load_steps=17 format=3 uid="uid://b5ktmlctsbml5"]
 
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EmerlEnemy.gd" id="1_7o0sq"]
 [ext_resource type="Texture2D" uid="uid://bdixhcctgyw6r" path="res://assets/emerl_sprites_bgremove.png" id="1_8bmpd"]
 [ext_resource type="Script" path="res://generics/hurtbox.gd" id="3_82nry"]
 [ext_resource type="Script" path="res://generics/StateMachine.gd" id="4_gy686"]
+[ext_resource type="Script" path="res://characters/EmerlEnemy/States/EnemyIdle.gd" id="5_nqmx6"]
+[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitGrounded.gd" id="6_y8cb8"]
+[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitUp.gd" id="7_hcoo1"]
+[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyFall.gd" id="8_8bib7"]
+
+[sub_resource type="Animation" id="Animation_3ob5h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(1, 4, 21, 38)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7ve8r"]
+resource_name = "fall"
+length = 0.30001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(1, 426, 24, 40), Rect2(30, 424, 30, 42), Rect2(65, 422, 35, 44), Rect2(105, 422, 35, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_r5kc7"]
+resource_name = "get_hit_grounded"
+length = 0.20001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(1, 1927, 34, 37), Rect2(39, 1929, 31, 35), Rect2(75, 1928, 23, 36)]
+}
 
 [sub_resource type="Animation" id="Animation_genus"]
 resource_name = "idle"
@@ -34,36 +97,9 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_3ob5h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharSprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(1, 4, 21, 38)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CharSprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_2i4y3"]
 resource_name = "get_hit_up"
-length = 0.30001
+length = 0.50001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -77,15 +113,13 @@ tracks/0/keys = {
 "values": [Rect2(1, 1979, 25, 30), Rect2(31, 1979, 26, 30), Rect2(62, 1972, 21, 37), Rect2(88, 1968, 26, 41)]
 }
 
-[sub_resource type="Animation" id="Animation_7ve8r"]
-resource_name = "fall"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_luax0"]
 _data = {
 "RESET": SubResource("Animation_3ob5h"),
 "fall": SubResource("Animation_7ve8r"),
-"get_hit_up": SubResource("Animation_2i4y3"),
-"idle": SubResource("Animation_genus")
+"get_hit_grounded": SubResource("Animation_r5kc7"),
+"idle": SubResource("Animation_genus"),
+"knockback_up": SubResource("Animation_2i4y3")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgpgy"]
@@ -123,6 +157,22 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_5a54f")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="EnemyStateMachine" type="Node2D" parent="."]
+[node name="EnemyStateMachine" type="Node2D" parent="." node_paths=PackedStringArray("initialState")]
 unique_name_in_owner = true
 script = ExtResource("4_gy686")
+initialState = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("5_nqmx6")
+
+[node name="EnemyHitGrounded" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("6_y8cb8")
+
+[node name="EnemyHitUp" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("7_hcoo1")
+
+[node name="EnemyFall" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("8_8bib7")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyHitGrounded" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyHitUp" method="_on_animation_finished"]
