@@ -7,7 +7,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 @onready var hitknockbackY : int = 0
 @onready var canPush : bool = false
 @onready var pushDirection : int = 1  # 1 = right, -1 = left
-@onready var gotHit : bool = false
+@onready var tumble : bool = false
 @export var slowdownMod : int = 60
 @export var pushvelocityX : int = 600
 
@@ -16,7 +16,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#animPlayer.play("idle")
 	pass
 
 
@@ -82,6 +81,7 @@ func get_hit(hitbox: HitBox):
 		
 		var chosenHitState = "EnemyHitGrounded"
 		if hitknockbackY < 0 and abs(hitknockbackX) < abs(hitknockbackY) :
+			tumble = true
 			chosenHitState = "EnemyHitUp"
 		
 		stateMachine.on_child_transition(stateMachine.currentState, chosenHitState)

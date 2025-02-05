@@ -1,5 +1,5 @@
 extends State
-class_name EnemyFall
+class_name EnemyGetup
 
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 
@@ -11,22 +11,22 @@ func _ready():
 
 
 func enter():
-	if "fall" in animList:
-		animPlayer.play("fall")
+	if "getup" in animList:
+		animPlayer.play("getup")
 
 func exit():
-	animPlayer.stop()
+	animPlayer.pause()
 
 func update(_delta: float):
-	var chosenState = ""
-	if owner.is_on_floor():
-		if owner.tumble:
-			chosenState = "EnemyKnockdown"
-		else:
-			chosenState = "EnemyIdle"
-	
-	transition.emit(self, chosenState)
+	pass
 
 
 func physics_update(_delta: float):
 	pass
+
+
+func _on_animation_finished(anim_name):
+	var chosenState = ""
+	if anim_name == "getup":
+		chosenState = "EnemyIdle"
+	transition.emit(self, chosenState)
