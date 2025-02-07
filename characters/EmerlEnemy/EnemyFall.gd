@@ -20,10 +20,11 @@ func exit():
 func update(_delta: float):
 	var chosenState = ""
 	if owner.is_on_floor():
-		if owner.tumble:
-			chosenState = "EnemyKnockdown"
-		else:
-			chosenState = "EnemyIdle"
+		#if owner.tumble:
+			#chosenState = "EnemyKnockdown"
+		#else:
+			#chosenState = "EnemyIdle"
+		chosenState = "EnemyIdle"
 	
 	transition.emit(self, chosenState)
 

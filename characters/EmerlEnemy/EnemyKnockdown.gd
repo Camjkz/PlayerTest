@@ -16,7 +16,7 @@ func enter():
 		animPlayer.play("knockdown")
 
 func exit():
-	animPlayer.stop()
+	animPlayer.pause()
 
 func update(_delta: float):
 	pass

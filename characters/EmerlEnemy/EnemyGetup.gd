@@ -15,7 +15,7 @@ func enter():
 		animPlayer.play("getup")
 
 func exit():
-	animPlayer.pause()
+	animPlayer.stop(true)
 
 func update(_delta: float):
 	pass
