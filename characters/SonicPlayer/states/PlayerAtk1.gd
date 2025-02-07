@@ -46,6 +46,8 @@ func update(_delta: float):
 			Input.is_action_just_pressed("attack"):
 				if Input.is_action_pressed("input_up"):
 					chosenState = "PlayerAtkUp"
+				elif Input.is_action_pressed("input_down"):
+					chosenState = "PlayerAtkDown"
 				else:
 					chosenState = "PlayerAtk2"
 			elif owner.is_moving_pressed():

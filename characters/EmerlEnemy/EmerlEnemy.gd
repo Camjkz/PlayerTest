@@ -80,9 +80,12 @@ func get_hit(hitbox: HitBox):
 		hitknockbackY = hitbox.knockbackY
 		
 		var chosenHitState = "EnemyHitGrounded"
-		if hitknockbackY < 0 and abs(hitknockbackX) < abs(hitknockbackY) :
+		if abs(hitknockbackX) < abs(hitknockbackY):
 			tumble = true
-			chosenHitState = "EnemyHitUp"
+			if hitknockbackY < 0:
+				chosenHitState = "EnemyHitUp"
+			elif hitknockbackY > 0:
+				chosenHitState = "EnemyHitDown"
 		
 		stateMachine.on_child_transition(stateMachine.currentState, chosenHitState)
 		

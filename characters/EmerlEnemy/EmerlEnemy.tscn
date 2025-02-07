@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b5ktmlctsbml5"]
+[gd_scene load_steps=25 format=3 uid="uid://b5ktmlctsbml5"]
 
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EmerlEnemy.gd" id="1_7o0sq"]
 [ext_resource type="Texture2D" uid="uid://bdixhcctgyw6r" path="res://assets/emerl_sprites_bgremove.png" id="1_8bmpd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyKnockdown.gd" id="9_i5km4"]
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyGetup.gd" id="10_m7fdj"]
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitFall.gd" id="11_jnufg"]
+[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitDown.gd" id="12_mqogx"]
 
 [sub_resource type="Animation" id="Animation_3ob5h"]
 length = 0.001
@@ -788,6 +789,94 @@ tracks/6/keys = {
 "values": [-1.5708]
 }
 
+[sub_resource type="Animation" id="Animation_2silp"]
+resource_name = "knockback_down"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(1, 2105, 34, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Collision:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(20, 32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hurtbox/HurtboxShape:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(20, 32)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hurtbox/HurtboxShape:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Collision:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1.5708]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hurtbox/HurtboxShape:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1.5708]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_luax0"]
 _data = {
 "RESET": SubResource("Animation_3ob5h"),
@@ -795,6 +884,7 @@ _data = {
 "get_hit_grounded": SubResource("Animation_r5kc7"),
 "getup": SubResource("Animation_cevlo"),
 "idle": SubResource("Animation_genus"),
+"knockback_down": SubResource("Animation_2silp"),
 "knockback_fall": SubResource("Animation_vbcj4"),
 "knockback_up": SubResource("Animation_2i4y3"),
 "knockdown": SubResource("Animation_c460u")
@@ -860,6 +950,9 @@ script = ExtResource("10_m7fdj")
 
 [node name="EnemyHitFall" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("11_jnufg")
+
+[node name="EnemyHitDown" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("12_mqogx")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyHitGrounded" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyHitUp" method="_on_animation_finished"]
