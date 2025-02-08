@@ -8,7 +8,6 @@ signal bufferAction()
 @export var hitbox : HitBox 
 @onready var hitboxshapes : Array = []
 @onready var maxindex : int = 0
-@onready var hitboxpositions : Array = []
 @onready var hitboxrotations : Array = []
 
 var animList : PackedStringArray = []
@@ -54,7 +53,6 @@ func setup_hitboxes():
 	hitboxshapes = []
 	hitboxshapes = hitbox.get_children()
 	for hitbox in hitboxshapes:
-		hitboxpositions.append(hitbox.position.x)
 		hitboxrotations.append(hitbox.rotation)
 	maxindex = hitboxshapes.size()
 
@@ -66,10 +64,11 @@ func handle_anim_side_values():
 		# keep hitboxes facing the correct side
 	var index : int = 0
 	while index < maxindex:
-		if hitboxpositions[index] < 0:
-			hitboxshapes[index].position.x = -abs(hitboxshapes[index].position.x) * owner.side
-		elif hitboxpositions[index] > 0:
-			hitboxshapes[index].position.x = abs(hitboxshapes[index].position.x) * owner.side
+		hitboxshapes[index].position.x = hitboxshapes[index].position.x * owner.side
+		#if hitboxpositions[index] < 0:
+			#hitboxshapes[index].position.x = -abs(hitboxshapes[index].position.x) * owner.side
+		#elif hitboxpositions[index] > 0:
+			#hitboxshapes[index].position.x = abs(hitboxshapes[index].position.x) * owner.side
 		
 		if hitboxrotations[index] < 0:
 			hitboxshapes[index].rotation = -abs(hitboxshapes[index].rotation) * owner.side
