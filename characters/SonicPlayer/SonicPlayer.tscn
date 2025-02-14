@@ -1553,6 +1553,7 @@ hitbox = NodePath("../../AtkDownHitbox")
 
 [node name="Atk1Hitbox" type="Area2D" parent="."]
 script = ExtResource("9_fucni")
+hitstun = 0.3
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Atk1Hitbox"]
 visible = false
@@ -1563,6 +1564,7 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
 [node name="Atk2Hitbox" type="Area2D" parent="."]
 script = ExtResource("9_fucni")
+hitstun = 0.3
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Atk2Hitbox"]
 visible = false
@@ -1573,6 +1575,7 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
 [node name="Atk3Hitbox" type="Area2D" parent="."]
 script = ExtResource("9_fucni")
+hitstun = 0.5
 knockbackY = -500
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Atk3Hitbox"]
@@ -1584,6 +1587,7 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
 [node name="AtkUpHitbox" type="Area2D" parent="."]
 script = ExtResource("9_fucni")
+hitstun = 0.4
 knockbackY = -1200
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AtkUpHitbox"]
@@ -1612,6 +1616,7 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
 [node name="AAtkSpikeHitbox" type="Area2D" parent="."]
 script = ExtResource("9_fucni")
+hitstun = 0.5
 knockbackY = 1500
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AAtkSpikeHitbox"]
@@ -1625,8 +1630,9 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 [node name="AtkDownHitbox" type="Area2D" parent="."]
 script = ExtResource("9_fucni")
 damage = 20
-knockbackX = 1500
-knockbackY = -500
+hitstun = 0.4
+knockbackX = 800
+knockbackY = -900
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AtkDownHitbox"]
 visible = false

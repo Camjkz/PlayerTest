@@ -1,9 +1,9 @@
 extends State
-class_name EnemyHitUp
+class_name EnemyHitAway
 
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 
-var animList : PackedStringArray = []
+@onready var animList : PackedStringArray = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,8 +11,9 @@ func _ready():
 
 
 func enter():
-	if "knockback_up" in animList:
-		animPlayer.play("knockback_up")
+	if "knockback_away" in animList:
+		animPlayer.play("knockback_away")
+		
 
 func exit():
 	animPlayer.pause()
@@ -32,5 +33,4 @@ func update(_delta: float):
 
 func physics_update(_delta: float):
 	pass
-
 

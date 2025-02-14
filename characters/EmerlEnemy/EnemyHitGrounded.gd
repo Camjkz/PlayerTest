@@ -15,16 +15,18 @@ func enter():
 		animPlayer.play("get_hit_grounded")
 
 func exit():
-	animPlayer.stop()
+	animPlayer.pause()
 
 func update(_delta: float):
-	pass
+	var chosenState = ""
+	owner.hitstun -= _delta
+	if owner.hitstun < 0:
+		owner.hitstun = 0
+		chosenState = "EnemyIdle"
+	
+	transition.emit(self, chosenState)
 
 
 func physics_update(_delta: float):
 	pass
 
-
-func _on_animation_finished(anim_name: String):
-	if anim_name == "get_hit_grounded":
-		transition.emit(self, "EnemyIdle")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b5ktmlctsbml5"]
+[gd_scene load_steps=27 format=3 uid="uid://b5ktmlctsbml5"]
 
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EmerlEnemy.gd" id="1_7o0sq"]
 [ext_resource type="Texture2D" uid="uid://bdixhcctgyw6r" path="res://assets/emerl_sprites_bgremove.png" id="1_8bmpd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyGetup.gd" id="10_m7fdj"]
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitFall.gd" id="11_jnufg"]
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitDown.gd" id="12_mqogx"]
+[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitAway.gd" id="13_h0b3w"]
 
 [sub_resource type="Animation" id="Animation_3ob5h"]
 length = 0.001
@@ -106,6 +107,18 @@ tracks/7/path = NodePath("Hurtbox/HurtboxShape:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -211,6 +224,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_r5kc7"]
 resource_name = "get_hit_grounded"
@@ -311,6 +336,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_cevlo"]
 resource_name = "getup"
@@ -398,6 +435,30 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [-1.5708, 0.0, -1.5708, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CharSprite:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_genus"]
@@ -500,6 +561,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_2silp"]
 resource_name = "knockback_down"
@@ -587,6 +660,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [-1.5708]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CharSprite:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_vbcj4"]
@@ -688,6 +773,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [0.0, -0.523599, -0.872665, -1.5708]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_2i4y3"]
 resource_name = "get_hit_up"
@@ -788,6 +885,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_c460u"]
 resource_name = "knockdown"
@@ -876,6 +985,142 @@ tracks/6/keys = {
 "update": 1,
 "values": [-1.5708]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CharSprite:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yxal5"]
+resource_name = "knockback_away"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(1, 2105, 34, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Collision:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(20, 32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hurtbox/HurtboxShape:shape:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(20, 32)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hurtbox/HurtboxShape:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Collision:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1.5708]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hurtbox/HurtboxShape:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1.5708]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CharSprite:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.349066]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CharSprite:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_luax0"]
 _data = {
@@ -884,6 +1129,7 @@ _data = {
 "get_hit_grounded": SubResource("Animation_r5kc7"),
 "getup": SubResource("Animation_cevlo"),
 "idle": SubResource("Animation_genus"),
+"knockback_away": SubResource("Animation_yxal5"),
 "knockback_down": SubResource("Animation_2silp"),
 "knockback_fall": SubResource("Animation_vbcj4"),
 "knockback_up": SubResource("Animation_2i4y3"),
@@ -933,20 +1179,14 @@ initialState = NodePath("EnemyIdle")
 [node name="EnemyIdle" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("5_nqmx6")
 
+[node name="EnemyFall" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("8_8bib7")
+
 [node name="EnemyHitGrounded" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("6_y8cb8")
 
 [node name="EnemyHitUp" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("7_hcoo1")
-
-[node name="EnemyFall" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("8_8bib7")
-
-[node name="EnemyKnockdown" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("9_i5km4")
-
-[node name="EnemyGetup" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("10_m7fdj")
 
 [node name="EnemyHitFall" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("11_jnufg")
@@ -954,7 +1194,14 @@ script = ExtResource("11_jnufg")
 [node name="EnemyHitDown" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("12_mqogx")
 
-[connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyHitGrounded" method="_on_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyHitUp" method="_on_animation_finished"]
+[node name="EnemyHitAway" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("13_h0b3w")
+
+[node name="EnemyKnockdown" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("9_i5km4")
+
+[node name="EnemyGetup" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("10_m7fdj")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyKnockdown" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyGetup" method="_on_animation_finished"]
