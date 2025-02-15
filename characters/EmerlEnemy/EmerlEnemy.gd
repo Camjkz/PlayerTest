@@ -54,6 +54,7 @@ func _process(delta):
 
 func get_hit(hitbox: HitBox):
 	var parent = hitbox.owner
+	var atkparent = hitbox.get_parent()
 	if parent != self:
 		print("Attack detected")
 		hitstun = hitbox.hitstun
