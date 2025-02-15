@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dp3i02gf7dvgm"]
+[gd_scene load_steps=43 format=3 uid="uid://dp3i02gf7dvgm"]
 
 [ext_resource type="Texture2D" uid="uid://b8w8ssvevkyrd" path="res://assets/10039_bgremove.png" id="1_p8in5"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/sonic_charscript.gd" id="1_w45x4"]
@@ -426,6 +426,42 @@ tracks/33/keys = {
 "update": 0,
 "values": [Vector2(20, 0)]
 }
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("AtkDownHitbox2/Hitbox1:disabled")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("AtkDownHitbox2/Hitbox1:visible")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("AtkDownHitbox2/Hitbox1:position")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_a8exo"]
 resource_name = "airatk_spike"
@@ -698,7 +734,8 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_e67ij"]
 resource_name = "atkdown"
-length = 1.50001
+length = 1.33334
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -706,7 +743,7 @@ tracks/0/path = NodePath("PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.8, 0.933333, 1.06667, 1.2, 1.33333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(15, 740, 25, 34), Rect2(46, 744, 27, 31), Rect2(80, 736, 29, 40), Rect2(115, 741, 31, 35), Rect2(151, 744, 39, 32), Rect2(195, 744, 34, 31), Rect2(234, 738, 31, 37), Rect2(270, 742, 32, 33), Rect2(307, 743, 39, 32), Rect2(351, 735, 37, 40), Rect2(393, 732, 21, 43), Rect2(420, 733, 21, 42), Rect2(445, 736, 39, 39), Rect2(489, 742, 34, 31), Rect2(528, 741, 30, 37), Rect2(564, 745, 25, 33)]
@@ -742,7 +779,7 @@ tracks/3/path = NodePath("PlayerSprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.7, 0.9, 1, 1.2, 1.3, 1.4, 1.5),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.4, 0.466667, 0.6, 0.666667, 0.933333, 1.06667, 1.2, 1.33333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(-4, 0), Vector2(-4, -4), Vector2(0, -2), Vector2(0, 0), Vector2(-8, -2), Vector2(-8, 0), Vector2(-6, -4), Vector2(2, -6), Vector2(-6, -6), Vector2(-10, -6), Vector2(-2, -2), Vector2(2, 0)]
@@ -804,7 +841,7 @@ tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(6, 8)]
 }
 tracks/9/type = "value"
@@ -816,7 +853,7 @@ tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(12, 4)]
 }
 tracks/10/type = "value"
@@ -924,7 +961,7 @@ tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(14, 0)]
 }
 tracks/19/type = "value"
@@ -936,7 +973,7 @@ tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(8, -18)]
 }
 tracks/20/type = "value"
@@ -948,7 +985,7 @@ tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(-2, -24)]
 }
 tracks/21/type = "value"
@@ -960,7 +997,7 @@ tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [-0.785398]
 }
 tracks/22/type = "value"
@@ -972,7 +1009,7 @@ tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [-1.5708]
 }
 tracks/23/type = "value"
@@ -984,7 +1021,7 @@ tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [0.959931]
 }
 tracks/24/type = "value"
@@ -996,7 +1033,7 @@ tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(6, -8)]
 }
 tracks/25/type = "value"
@@ -1008,7 +1045,7 @@ tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [-1.13446]
 }
 tracks/26/type = "value"
@@ -1044,7 +1081,7 @@ tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [10.0]
 }
 tracks/29/type = "value"
@@ -1056,7 +1093,7 @@ tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [40.0]
 }
 tracks/30/type = "value"
@@ -1066,7 +1103,7 @@ tracks/30/path = NodePath("AtkDownHitbox/Hitbox1:disabled")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.9),
+"times": PackedFloat32Array(0, 0.266667, 0.466667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -1078,7 +1115,7 @@ tracks/31/path = NodePath("AtkDownHitbox/Hitbox1:visible")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.9),
+"times": PackedFloat32Array(0, 0.266667, 0.466667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -1090,10 +1127,46 @@ tracks/32/path = NodePath("AtkDownHitbox/Hitbox1:position")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
-"times": PackedFloat32Array(0.4, 0.5, 0.6, 0.7, 0.8),
+"times": PackedFloat32Array(0.266667, 0.333333, 0.4, 0.466667, 0.533333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(15, 0), Vector2(7, 0), Vector2(0, 0), Vector2(-14, 0), Vector2(-18, 0)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("AtkDownHitbox2/Hitbox1:disabled")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("AtkDownHitbox2/Hitbox1:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("AtkDownHitbox2/Hitbox1:position")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-14, 0), Vector2(-18, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ym5ju"]
@@ -1476,6 +1549,8 @@ height = 40.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_06p60"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjl8s"]
+
 [node name="SonicPlayerKinematic" type="CharacterBody2D"]
 unique_name_in_owner = true
 scale = Vector2(4, 4)
@@ -1547,9 +1622,10 @@ hitbox = NodePath("../../AtkUpHitbox")
 script = ExtResource("13_a7tyr")
 hitbox = NodePath("../../AAtkSpikeHitbox")
 
-[node name="PlayerAtkDown" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox")]
+[node name="PlayerAtkDown" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox", "hitbox2")]
 script = ExtResource("14_icd70")
 hitbox = NodePath("../../AtkDownHitbox")
+hitbox2 = NodePath("../../AtkDownHitbox2")
 
 [node name="Atk1Hitbox" type="Area2D" parent="."]
 script = ExtResource("9_fucni")
@@ -1638,6 +1714,19 @@ knockbackY = -900
 visible = false
 position = Vector2(15, 0)
 shape = SubResource("CapsuleShape2D_06p60")
+disabled = true
+debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
+
+[node name="AtkDownHitbox2" type="Area2D" parent="."]
+script = ExtResource("9_fucni")
+damage = 20
+hitstun = 0.4
+knockbackX = -800
+knockbackY = -900
+
+[node name="Hitbox1" type="CollisionShape2D" parent="AtkDownHitbox2"]
+visible = false
+shape = SubResource("CapsuleShape2D_cjl8s")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
