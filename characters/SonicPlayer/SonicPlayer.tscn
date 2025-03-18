@@ -1,13 +1,15 @@
-[gd_scene load_steps=43 format=3 uid="uid://dp3i02gf7dvgm"]
+[gd_scene load_steps=46 format=3 uid="uid://dp3i02gf7dvgm"]
 
 [ext_resource type="Texture2D" uid="uid://b8w8ssvevkyrd" path="res://assets/10039_bgremove.png" id="1_p8in5"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/sonic_charscript.gd" id="1_w45x4"]
 [ext_resource type="Script" path="res://generics/StateMachine.gd" id="3_c5jow"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerIdle.gd" id="4_8h8ba"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMove.gd" id="5_l0p3c"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMoveTurn.gd" id="7_bglse"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerFall.gd" id="7_fhgxl"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerJump.gd" id="7_i36hw"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/PlayerLand.gd" id="8_ei2dd"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMoveStop.gd" id="8_ommfa"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk1.gd" id="8_qsioo"]
 [ext_resource type="Script" path="res://generics/hitbox.gd" id="9_fucni"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk2.gd" id="9_k0sqx"]
@@ -15,6 +17,7 @@
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkUp.gd" id="11_aw825"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/PlayerAAtkSpike.gd" id="13_a7tyr"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/PlayerAtkDown.gd" id="14_icd70"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerIdleTurn.gd" id="15_xq056"]
 
 [sub_resource type="Animation" id="Animation_k4770"]
 length = 0.001
@@ -462,6 +465,18 @@ tracks/36/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("PlayerSprite:flip_h")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_a8exo"]
 resource_name = "airatk_spike"
@@ -551,6 +566,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [20.0, 45.0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PlayerSprite:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_p5aei"]
 resource_name = "atk1"
@@ -615,6 +642,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(20, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerSprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_uufl1"]
 resource_name = "atk2"
@@ -666,6 +705,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [Vector2(6, 8), Vector2(14, -2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerSprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_gjjkg"]
@@ -730,6 +781,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerSprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_e67ij"]
@@ -1168,6 +1231,18 @@ tracks/35/keys = {
 "update": 1,
 "values": [Vector2(-14, 0), Vector2(-18, 0)]
 }
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("PlayerSprite:flip_h")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ym5ju"]
 resource_name = "atkup"
@@ -1340,6 +1415,18 @@ tracks/13/keys = {
 "update": 1,
 "values": [1.5708, 0.959931]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PlayerSprite:flip_h")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bj8jv"]
 resource_name = "fall"
@@ -1355,6 +1442,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(16, 329, 25, 34), Rect2(46, 327, 30, 36), Rect2(81, 325, 35, 39), Rect2(121, 324, 35, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_vhy8b"]
@@ -1386,6 +1485,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_cc7q7"]
 resource_name = "jump"
@@ -1401,6 +1512,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(13, 276, 22, 40), Rect2(40, 276, 22, 40), Rect2(67, 278, 24, 36), Rect2(96, 281, 23, 34), Rect2(124, 284, 22, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_3ep7j"]
@@ -1430,6 +1553,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 2)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_tq08u"]
 resource_name = "move"
@@ -1448,6 +1583,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [Rect2(14, 105, 24, 33), Rect2(49, 104, 31, 32), Rect2(85, 105, 30, 32), Rect2(120, 104, 23, 34), Rect2(148, 103, 28, 35), Rect2(181, 105, 30, 33), Rect2(216, 105, 28, 33), Rect2(249, 104, 23, 34), Rect2(277, 103, 28, 35)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_o2mws"]
 resource_name = "run_turn"
@@ -1463,6 +1610,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Rect2(15, 190, 26, 34), Rect2(48, 191, 29, 33), Rect2(82, 190, 34, 34), Rect2(123, 190, 29, 34)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_uetqj"]
@@ -1480,6 +1639,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [Rect2(15, 147, 26, 34), Rect2(48, 147, 35, 34), Rect2(88, 146, 35, 35), Rect2(129, 147, 25, 34)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_f8vuu"]
 resource_name = "turn"
@@ -1495,6 +1666,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Rect2(15, 61, 22, 33), Rect2(43, 60, 22, 34), Rect2(70, 62, 22, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lmqce"]
@@ -1590,8 +1773,17 @@ initialState = NodePath("PlayerIdle")
 [node name="PlayerIdle" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("4_8h8ba")
 
+[node name="PlayerIdleTurn" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("15_xq056")
+
 [node name="PlayerMove" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("5_l0p3c")
+
+[node name="PlayerMoveTurn" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("7_bglse")
+
+[node name="PlayerMoveStop" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("8_ommfa")
 
 [node name="PlayerJump" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("7_i36hw")
@@ -1732,6 +1924,9 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerJump" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerLand" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerIdleTurn" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerMoveTurn" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerMoveStop" method="_on_animation_finished"]
 [connection signal="jumpTrigger" from="PlayerStateMachine/PlayerJump" to="." method="_on_player_jump_trigger"]
 [connection signal="lockDirection" from="PlayerStateMachine/PlayerJump" to="." method="_on_player_atk_lock_direction"]
 [connection signal="lockDirection" from="PlayerStateMachine/PlayerFall" to="." method="_on_player_atk_lock_direction"]

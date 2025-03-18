@@ -1,5 +1,5 @@
 extends State
-class_name PlayerIdle
+class_name PlayerMoveStop
 
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 
@@ -11,8 +11,8 @@ func _ready():
 
 func enter():
 	currentSide = owner.side
-	if "idle" in animList:
-		animPlayer.play("idle")
+	if "stop" in animList:
+		animPlayer.play("stop")
 
 func exit():
 	animPlayer.stop()
@@ -45,3 +45,8 @@ func update(_delta: float):
 	
 func physics_update(_delta: float):
 	pass
+
+
+func _on_animation_finished(anim_name):
+	if anim_name == "stop":
+		transition.emit(self, "PlayerIdle")

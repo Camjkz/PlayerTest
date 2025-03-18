@@ -4,11 +4,13 @@ class_name PlayerMove
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 
 var animList : PackedStringArray = []
+var currentSide : int = 0
 
 func _ready():
 	animList = animPlayer.get_animation_list()
 
 func enter():
+	currentSide = owner.side
 	if "move" in animList:
 		animPlayer.play("move")
 
@@ -26,11 +28,14 @@ func update(_delta: float):
 			chosenState = "PlayerAtkDown"
 		else:
 			chosenState = "PlayerAtk1"
-
 	if owner.is_moving_pressed():
-		pass
+		if currentSide != owner.side:
+			chosenState = "PlayerMoveTurn"
 	else:
-		chosenState = "PlayerIdle"
+		if abs(owner.velocity.x) >= 540:
+			chosenState = "PlayerMoveStop"
+		else:
+			chosenState = "PlayerIdle"
 
 	if owner.velocity.y > 0:
 		chosenState = "PlayerFall"

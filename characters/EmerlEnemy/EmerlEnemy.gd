@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 @onready var tumble : bool = false
 @onready var hitstun : float = 0.0
 @onready var side : int = 1
+@onready var canFlip : bool = true
 
 @onready var animPlayer : AnimationPlayer =  %AnimationPlayer
 @onready var stateMachine : StateMachine = %EnemyStateMachine

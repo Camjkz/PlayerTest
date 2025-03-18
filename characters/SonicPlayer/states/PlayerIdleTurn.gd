@@ -1,18 +1,16 @@
 extends State
-class_name PlayerIdle
+class_name PlayerIdleTurn
 
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 
 var animList : PackedStringArray = []
-var currentSide : int = 0
 
 func _ready():
 	animList = animPlayer.get_animation_list()
 
 func enter():
-	currentSide = owner.side
-	if "idle" in animList:
-		animPlayer.play("idle")
+	if "turn" in animList:
+		animPlayer.play("turn")
 
 func exit():
 	animPlayer.stop()
@@ -28,14 +26,8 @@ func update(_delta: float):
 			chosenState = "PlayerAtkDown"
 		else:
 			chosenState = "PlayerAtk1"
-	elif owner.is_moving_pressed():
-		if currentSide != owner.side:
-			if abs(owner.velocity.x) < 200:
-				chosenState = "PlayerIdleTurn"
-			else:
-				chosenState = "PlayerMoveTurn"
-		else:
-			chosenState = "PlayerMove"
+	#elif owner.is_moving_pressed():
+		#chosenState = "PlayerMove"
 	
 	if owner.velocity.y > 0:
 		chosenState = "PlayerFall"
@@ -44,4 +36,9 @@ func update(_delta: float):
 		transition.emit(self, chosenState)
 	
 func physics_update(_delta: float):
-	pass
+	owner.velocity.x *= 0.8
+
+
+func _on_animation_finished(anim_name):
+	if anim_name == "turn":
+		transition.emit(self, "PlayerIdle")

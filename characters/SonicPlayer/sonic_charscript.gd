@@ -70,7 +70,8 @@ func set_char_velocity(_delta: float):
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		var prevVel = velocity
-		velocity.x = direction * SPEED
+		#velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED/5)
 		if is_attacking_ground():
 			velocity = prevVel.lerp(Vector2(0, velocity.y), movespdModOnAtk)
 	else:
