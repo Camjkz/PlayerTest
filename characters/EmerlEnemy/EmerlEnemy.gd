@@ -16,6 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 
 @onready var animPlayer : AnimationPlayer =  %AnimationPlayer
 @onready var stateMachine : StateMachine = %EnemyStateMachine
+@onready var hurtbox : Area2D = %Hurtbox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -79,6 +80,9 @@ func get_hit(hitbox: HitBox):
 		
 		stateMachine.on_child_transition(stateMachine.currentState, chosenHitState)
 		
+		var areas : Array[Area2D] = hurtbox.get_overlapping_areas()
+		for area in areas:
+			print(area)
 
 func flip_char(direction: String):
 	if direction == "right":

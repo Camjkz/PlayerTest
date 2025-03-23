@@ -1164,6 +1164,7 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wgpgy")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_82nry")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
