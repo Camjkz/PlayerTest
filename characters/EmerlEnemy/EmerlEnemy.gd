@@ -80,9 +80,9 @@ func get_hit(hitbox: HitBox):
 		
 		stateMachine.on_child_transition(stateMachine.currentState, chosenHitState)
 		
-		var areas : Array[Area2D] = hurtbox.get_overlapping_areas()
-		for area in areas:
-			print(area)
+		#var areas : Array[Area2D] = hurtbox.get_overlapping_areas()
+		#for area in areas:
+			#print(area)
 
 func flip_char(direction: String):
 	if direction == "right":

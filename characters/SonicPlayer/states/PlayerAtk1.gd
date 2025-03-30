@@ -93,3 +93,4 @@ func handle_anim_side_values():
 
 func physics_update(_delta: float):
 	pass
+	
