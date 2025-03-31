@@ -1140,10 +1140,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgpgy"]
 size = Vector2(20, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a54f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vrho"]
 size = Vector2(20, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vrho"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a54f"]
 size = Vector2(20, 32)
 
 [node name="EmerlEnemy" type="CharacterBody2D"]
@@ -1167,6 +1167,16 @@ libraries = {
 visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wgpgy")
+
+[node name="DetectHit" type="ShapeCast2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_5vrho")
+target_position = Vector2(0, 0)
+max_results = 5
+collision_mask = 0
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("14_aukol")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -1208,16 +1218,6 @@ script = ExtResource("9_i5km4")
 
 [node name="EnemyGetup" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("10_m7fdj")
-
-[node name="DetectHit" type="ShapeCast2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_5vrho")
-target_position = Vector2(0, 0)
-max_results = 5
-collision_mask = 0
-collide_with_areas = true
-collide_with_bodies = false
-script = ExtResource("14_aukol")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyKnockdown" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyGetup" method="_on_animation_finished"]

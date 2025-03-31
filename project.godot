@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GGS="*res://addons/ggs/classes/global/ggs.tscn"
+Hitvfx="*res://hitvfx.gd"
 
 [display]
 
