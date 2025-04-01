@@ -43,6 +43,6 @@ func on_child_transition(state, new_state_name):
 	
 	newState.enter()
 	currentState = newState
-	#if owner.name == "EmerlEnemy":
-		#print(new_state_name)
+	if owner.name == "EmerlEnemy":
+		print(new_state_name)
 	
