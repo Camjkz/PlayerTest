@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdg6vdfru716o"]
+[gd_scene load_steps=8 format=3 uid="uid://cdg6vdfru716o"]
 
 [ext_resource type="PackedScene" uid="uid://cq2ltssjaa0ya" path="res://characters/Dummy/dummy.tscn" id="1_khq6l"]
 [ext_resource type="PackedScene" uid="uid://b5ktmlctsbml5" path="res://characters/EmerlEnemy/EmerlEnemy.tscn" id="3_d7ujw"]
 [ext_resource type="PackedScene" uid="uid://dp3i02gf7dvgm" path="res://characters/SonicPlayer/SonicPlayer.tscn" id="3_k4cma"]
 [ext_resource type="Script" path="res://main_state/checkFPS.gd" id="4_uboc8"]
+[ext_resource type="Script" path="res://main_state/HitHandler.gd" id="5_hbo7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5payx"]
 size = Vector2(1280, 232)
@@ -12,7 +13,6 @@ size = Vector2(1280, 232)
 size = Vector2(16, 16)
 
 [node name="play" type="Node2D"]
-position = Vector2(300, 232)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(400, 576)
@@ -73,3 +73,6 @@ editor_draw_drag_margin = true
 
 [node name="checkFPS" type="Node" parent="."]
 script = ExtResource("4_uboc8")
+
+[node name="HitHandler" type="Node" parent="."]
+script = ExtResource("5_hbo7h")

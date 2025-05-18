@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b5ktmlctsbml5"]
+[gd_scene load_steps=27 format=3 uid="uid://b5ktmlctsbml5"]
 
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EmerlEnemy.gd" id="1_7o0sq"]
 [ext_resource type="Texture2D" uid="uid://bdixhcctgyw6r" path="res://assets/emerl_sprites_bgremove.png" id="1_8bmpd"]
@@ -13,7 +13,6 @@
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitFall.gd" id="11_jnufg"]
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitDown.gd" id="12_mqogx"]
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitAway.gd" id="13_h0b3w"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/DetectHit.gd" id="14_aukol"]
 
 [sub_resource type="Animation" id="Animation_3ob5h"]
 length = 0.001
@@ -1140,9 +1139,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgpgy"]
 size = Vector2(20, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vrho"]
-size = Vector2(20, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a54f"]
 size = Vector2(20, 32)
 
@@ -1168,19 +1164,10 @@ visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wgpgy")
 
-[node name="DetectHit" type="ShapeCast2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_5vrho")
-target_position = Vector2(0, 0)
-max_results = 5
-collision_mask = 0
-collide_with_areas = true
-collide_with_bodies = false
-script = ExtResource("14_aukol")
-
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("hurtboxArea")]
 unique_name_in_owner = true
 script = ExtResource("3_82nry")
+hurtboxArea = NodePath("HurtboxShape")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, 2)

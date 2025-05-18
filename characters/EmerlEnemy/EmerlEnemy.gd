@@ -54,7 +54,7 @@ func _process(delta):
 	pass
 	
 
-func get_hit(hitbox: HitBox):
+func get_hit(hitbox: HitBox, hurtbox: Hurtbox):
 	var parent = hitbox.owner
 	var atkparent = hitbox.get_parent()
 	if parent != self:
@@ -62,6 +62,8 @@ func get_hit(hitbox: HitBox):
 		hitstun = hitbox.hitstun
 		hitknockbackX = hitbox.knockbackX * parent.side
 		hitknockbackY = hitbox.knockbackY
+		
+		Hitvfx.showHit.emit(hitbox, hurtbox)
 		
 		var chosenHitState = "EnemyHitGrounded"
 		if abs(hitknockbackX) < abs(hitknockbackY)/2:

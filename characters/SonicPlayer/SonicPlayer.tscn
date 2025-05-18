@@ -1819,9 +1819,10 @@ script = ExtResource("14_icd70")
 hitbox = NodePath("../../AtkDownHitbox")
 hitbox2 = NodePath("../../AtkDownHitbox2")
 
-[node name="Atk1Hitbox" type="Area2D" parent="."]
+[node name="Atk1Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.3
+hitboxArea = NodePath("Hitbox1")
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Atk1Hitbox"]
 visible = false
@@ -1830,9 +1831,10 @@ shape = SubResource("CapsuleShape2D_ihn5i")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="Atk2Hitbox" type="Area2D" parent="."]
+[node name="Atk2Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.3
+hitboxArea = NodePath("Hitbox1")
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Atk2Hitbox"]
 visible = false
@@ -1841,10 +1843,11 @@ shape = SubResource("CircleShape2D_xfejo")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="Atk3Hitbox" type="Area2D" parent="."]
+[node name="Atk3Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.5
 knockbackY = -500
+hitboxArea = NodePath("Hitbox1")
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Atk3Hitbox"]
 visible = false
@@ -1853,10 +1856,11 @@ shape = SubResource("CapsuleShape2D_pr1rv")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AtkUpHitbox" type="Area2D" parent="."]
+[node name="AtkUpHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
+hitboxArea = NodePath("Hitbox1")
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AtkUpHitbox"]
 visible = false
@@ -1882,10 +1886,11 @@ shape = SubResource("CapsuleShape2D_kcw5i")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AAtkSpikeHitbox" type="Area2D" parent="."]
+[node name="AAtkSpikeHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.5
 knockbackY = 1500
+hitboxArea = NodePath("Hitbox1")
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AAtkSpikeHitbox"]
 visible = false
@@ -1895,12 +1900,13 @@ shape = SubResource("CapsuleShape2D_uf5ou")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AtkDownHitbox" type="Area2D" parent="."]
+[node name="AtkDownHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 damage = 20
 hitstun = 0.4
 knockbackX = 800
 knockbackY = -900
+hitboxArea = NodePath("Hitbox1")
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AtkDownHitbox"]
 visible = false
@@ -1909,12 +1915,13 @@ shape = SubResource("CapsuleShape2D_06p60")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AtkDownHitbox2" type="Area2D" parent="."]
+[node name="AtkDownHitbox2" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 damage = 20
 hitstun = 0.4
 knockbackX = -800
 knockbackY = -900
+hitboxArea = NodePath("Hitbox1")
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AtkDownHitbox2"]
 visible = false

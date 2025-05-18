@@ -45,6 +45,7 @@ _data = {
 script = ExtResource("1_o5rqy")
 
 [node name="HitSprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
 texture = ExtResource("1_gba20")
 region_enabled = true
 region_rect = Rect2(11, 30, 20, 21)

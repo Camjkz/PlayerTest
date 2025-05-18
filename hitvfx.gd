@@ -1,6 +1,7 @@
 extends Node
 
 signal finishAnim(hitvfx)
+signal showHit(hitbox: HitBox, hurtbox: Hurtbox)
 
 ## Called when the node enters the scene tree for the first time.
 #func _ready():
