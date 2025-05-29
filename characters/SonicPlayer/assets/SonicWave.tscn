@@ -1,0 +1,140 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhntkirqrjtnm"]
+
+[ext_resource type="Texture2D" uid="uid://btt6oaq5rh5sj" path="res://assets/10039_bgremove_2.png" id="1_5mj1u"]
+[ext_resource type="Script" path="res://generics/hitbox.gd" id="2_g1jfj"]
+
+[sub_resource type="Animation" id="Animation_g0e2d"]
+resource_name = "launch"
+length = 0.90001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(60, 128, 31, 30), Rect2(96, 96, 48, 64), Rect2(152, 96, 56, 64), Rect2(208, 104, 64, 56), Rect2(344, 96, 72, 64), Rect2(416, 104, 72, 56), Rect2(560, 96, 72, 64), Rect2(632, 96, 64, 64), Rect2(768, 96, 72, 64), Rect2(840, 112, 72, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaveSprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-16, -16), Vector2(-24, -32), Vector2(-30, -28), Vector2(-32, -32), Vector2(-28, -28), Vector2(-30, -32), Vector2(-32, -32), Vector2(-32, -24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WaveHitbox/Hitbox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WaveHitbox/Hitbox:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_wbu1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaveSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(60, 128, 31, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaveSprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-16, -15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WaveHitbox/Hitbox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WaveHitbox/Hitbox:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bqfs8"]
+_data = {
+"RESET": SubResource("Animation_wbu1u"),
+"launch": SubResource("Animation_g0e2d")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4j8p"]
+radius = 15.0
+
+[node name="SonicWave" type="Node2D"]
+
+[node name="WaveSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_5mj1u")
+offset = Vector2(-16, -15)
+region_enabled = true
+region_rect = Rect2(60, 128, 31, 30)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bqfs8")
+}
+
+[node name="WaveHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+script = ExtResource("2_g1jfj")
+knockbackX = 400
+knockbackY = -400
+hitboxArea = NodePath("Hitbox")
+
+[node name="Hitbox" type="CollisionShape2D" parent="WaveHitbox"]
+position = Vector2(-16, -16)
+shape = SubResource("CapsuleShape2D_k4j8p")
+debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
