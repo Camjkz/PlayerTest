@@ -6,6 +6,8 @@ signal bufferAction()
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 @onready var playerSprite : Sprite2D = %PlayerSprite
 @export var hitbox : HitBox 
+@export var hitbox2 : HitBox
+@export var hitbox3 : HitBox
 @onready var hitboxshapes : Array = []
 @onready var maxindex : int = 0
 @onready var hitboxrotations : Array = []
@@ -52,6 +54,8 @@ func update(_delta: float):
 func setup_hitboxes():
 	hitboxshapes = []
 	hitboxshapes = hitbox.get_children()
+	hitboxshapes.append_array(hitbox2.get_children())
+	hitboxshapes.append_array(hitbox3.get_children())
 	for hitbox in hitboxshapes:
 		hitboxrotations.append(hitbox.rotation)
 	maxindex = hitboxshapes.size()
