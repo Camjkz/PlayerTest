@@ -1863,6 +1863,8 @@ script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
 hitboxArea = NodePath("Hitbox1")
+isGrouped = true
+groupName = "AtkUp"
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AtkUpHitbox"]
 visible = false
@@ -1877,6 +1879,8 @@ script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
 hitboxArea = NodePath("Hitbox2")
+isGrouped = true
+groupName = "AtkUp"
 
 [node name="Hitbox2" type="CollisionShape2D" parent="AtkUpHitbox2"]
 visible = false
@@ -1891,6 +1895,8 @@ script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
 hitboxArea = NodePath("Hitbox3")
+isGrouped = true
+groupName = "AtkUp"
 
 [node name="Hitbox3" type="CollisionShape2D" parent="AtkUpHitbox3"]
 visible = false
@@ -1902,9 +1908,11 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
 [node name="AAtkSpikeHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
+damage = 15
 hitstun = 0.5
 knockbackY = 1500
 hitboxArea = NodePath("Hitbox1")
+groupName = "AtkSpike"
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AAtkSpikeHitbox"]
 visible = false
@@ -1921,6 +1929,8 @@ hitstun = 0.4
 knockbackX = 800
 knockbackY = -900
 hitboxArea = NodePath("Hitbox1")
+isGrouped = true
+groupName = "AtkDown"
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AtkDownHitbox"]
 visible = false
@@ -1936,6 +1946,8 @@ hitstun = 0.4
 knockbackX = -800
 knockbackY = -900
 hitboxArea = NodePath("Hitbox1")
+isGrouped = true
+groupName = "AtkDown"
 
 [node name="Hitbox1" type="CollisionShape2D" parent="AtkDownHitbox2"]
 visible = false
@@ -1948,6 +1960,7 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 [connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerMoveStop" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerJump" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerLand" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerAtkUp" method="_on_animation_finished"]
 [connection signal="jumpTrigger" from="PlayerStateMachine/PlayerJump" to="." method="_on_player_jump_trigger"]
 [connection signal="lockDirection" from="PlayerStateMachine/PlayerJump" to="." method="_on_player_atk_lock_direction"]
 [connection signal="lockDirection" from="PlayerStateMachine/PlayerFall" to="." method="_on_player_atk_lock_direction"]

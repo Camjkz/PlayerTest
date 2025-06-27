@@ -84,3 +84,9 @@ func handle_anim_side_values():
 
 func physics_update(_delta: float):
 	pass
+
+
+func _on_animation_finished(anim_name):
+	if anim_name == "atkup":
+		pass
+		

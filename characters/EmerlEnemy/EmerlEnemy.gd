@@ -56,9 +56,11 @@ func _process(delta):
 
 func get_hit(hitbox: HitBox, hurtbox: Hurtbox):
 	var parent = hitbox.owner
-	var atkparent = hitbox.get_parent()
+	
+	#if hitbox.isGrouped && hitbox.groupName != "":
+		#pass
 	if parent != self:
-		print("Attack detected")
+		print("Attack detected, dmg = " + str(hitbox.damage) + ", groupname = " + hitbox.groupName)
 		hitstun = hitbox.hitstun
 		hitknockbackX = hitbox.knockbackX * parent.side
 		hitknockbackY = hitbox.knockbackY
