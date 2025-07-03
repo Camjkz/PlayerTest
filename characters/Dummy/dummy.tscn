@@ -28,8 +28,9 @@ texture = ExtResource("1_v6l1u")
 shape = SubResource("RectangleShape2D_mb7c8")
 debug_color = Color(0, 0, 1, 0.419608)
 
-[node name="DummyHurtbox" type="Area2D" parent="."]
+[node name="DummyHurtbox" type="Area2D" parent="." node_paths=PackedStringArray("hurtboxArea")]
 script = ExtResource("3_p8q0h")
+hurtboxArea = NodePath("DummyHurtboxShape")
 
 [node name="DummyHurtboxShape" type="CollisionShape2D" parent="DummyHurtbox"]
 shape = SubResource("RectangleShape2D_37nwr")

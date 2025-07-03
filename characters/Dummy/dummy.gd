@@ -41,12 +41,15 @@ func _physics_process(delta):
 func _process(delta):
 	pass
 
-func get_hit(hitbox: HitBox):
+func get_hit(hitbox: HitBox, hurtbox: Hurtbox):
 	var parent = hitbox.owner
 	if parent != self:
 		print("Attack detected")
 		hitknockbackX = hitbox.knockbackX * parent.side
 		hitknockbackY = hitbox.knockbackY
+		
+		Hitvfx.showHit.emit(hitbox, hurtbox)
+		
 		move_and_slide()
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dp3i02gf7dvgm"]
+[gd_scene load_steps=49 format=3 uid="uid://dp3i02gf7dvgm"]
 
 [ext_resource type="Texture2D" uid="uid://b8w8ssvevkyrd" path="res://assets/10039_bgremove.png" id="1_p8in5"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/sonic_charscript.gd" id="1_w45x4"]
@@ -8,16 +8,18 @@
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMoveTurn.gd" id="7_bglse"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerFall.gd" id="7_fhgxl"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerJump.gd" id="7_i36hw"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/PlayerLand.gd" id="8_ei2dd"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerLand.gd" id="8_ei2dd"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMoveStop.gd" id="8_ommfa"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk1.gd" id="8_qsioo"]
 [ext_resource type="Script" path="res://generics/hitbox.gd" id="9_fucni"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk2.gd" id="9_k0sqx"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk3.gd" id="10_r6i88"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkUp.gd" id="11_aw825"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/PlayerAAtkSpike.gd" id="13_a7tyr"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/PlayerAtkDown.gd" id="14_icd70"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAAtkSpike.gd" id="13_a7tyr"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkDown.gd" id="14_icd70"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerIdleTurn.gd" id="15_xq056"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkSonicWave.gd" id="18_5uqb2"]
+[ext_resource type="PackedScene" uid="uid://dhntkirqrjtnm" path="res://characters/SonicPlayer/assets/SonicWave.tscn" id="19_4gf3i"]
 
 [sub_resource type="Animation" id="Animation_k4770"]
 length = 0.001
@@ -1244,6 +1246,22 @@ tracks/36/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_ijybc"]
+resource_name = "atksonicwave"
+length = 0.70001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(49, 1040, 23, 22), Rect2(76, 1038, 21, 24), Rect2(101, 1039, 22, 23), Rect2(127, 1040, 20, 22), Rect2(49, 1040, 23, 22), Rect2(76, 1038, 21, 24), Rect2(101, 1039, 22, 23), Rect2(127, 1040, 20, 22)]
+}
+
 [sub_resource type="Animation" id="Animation_ym5ju"]
 resource_name = "atkup"
 length = 0.80001
@@ -1688,6 +1706,7 @@ _data = {
 "atk2": SubResource("Animation_uufl1"),
 "atk3": SubResource("Animation_gjjkg"),
 "atkdown": SubResource("Animation_e67ij"),
+"atksonicwave": SubResource("Animation_ijybc"),
 "atkup": SubResource("Animation_ym5ju"),
 "fall": SubResource("Animation_bj8jv"),
 "idle": SubResource("Animation_vhy8b"),
@@ -1820,6 +1839,11 @@ hitbox = NodePath("../../AAtkSpikeHitbox")
 script = ExtResource("14_icd70")
 hitbox = NodePath("../../AtkDownHitbox")
 hitbox2 = NodePath("../../AtkDownHitbox2")
+
+[node name="PlayerAtkSonicWave" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("18_5uqb2")
+sonicwave = ExtResource("19_4gf3i")
+spawnoffset_x = 100
 
 [node name="Atk1Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
@@ -1973,3 +1997,4 @@ debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 [connection signal="lockDirection" from="PlayerStateMachine/PlayerAtkUp" to="." method="_on_player_atk_lock_direction"]
 [connection signal="lockDirection" from="PlayerStateMachine/PlayerAAtkSpike" to="." method="_on_player_atk_lock_direction"]
 [connection signal="lockDirection" from="PlayerStateMachine/PlayerAtkDown" to="." method="_on_player_atk_lock_direction"]
+[connection signal="lockDirection" from="PlayerStateMachine/PlayerAtkSonicWave" to="." method="_on_player_atk_lock_direction"]

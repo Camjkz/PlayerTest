@@ -28,7 +28,8 @@ func update(_delta: float):
 			chosenState = "PlayerAtk1"
 	#elif owner.is_moving_pressed():
 		#chosenState = "PlayerMove"
-	
+	elif Input.is_action_just_pressed("special"):
+		chosenState = "PlayerAtkSonicWave"
 	if owner.velocity.y > 0:
 		chosenState = "PlayerFall"
 	

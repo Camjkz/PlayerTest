@@ -26,7 +26,8 @@ func update(_delta: float):
 			chosenState = "PlayerAtkDown"
 		else:
 			chosenState = "PlayerAtk1"
-
+	elif Input.is_action_just_pressed("special"):
+		chosenState = "PlayerAtkSonicWave"
 	#if owner.is_moving_pressed():
 		#pass
 	#else:
