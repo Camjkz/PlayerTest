@@ -5,12 +5,19 @@ extends Node2D
 @onready var timeleft = 0
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 @onready var waveSprite : Sprite2D = %WaveSprite
-@onready var side = 1
+@onready var hitbox : HitBox = %WaveHitbox
+@onready var side
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timeleft = lifetime
+	waveSprite.scale.x = waveSprite.scale.x * side
+	hitbox.hitboxArea.position.x = hitbox.hitboxArea.position.x * side
 	animPlayer.play("launch")
+	
+
+func setParams(sideVal:int):
+	side = sideVal
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

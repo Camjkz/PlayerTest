@@ -42,12 +42,12 @@ func update(_delta: float):
 	if animPlayer.is_playing():
 		if animPlayer.current_animation_position >= 0.5 && !projectilespawned:
 			print(get_tree().current_scene.name)
+			sonicwavechild.setParams(owner.side)
 			get_tree().current_scene.add_child(sonicwavechild)
-			sonicwavechild.side = owner.side
 			projectilespawned = true
 			sonicwavechild.global_position = playerSprite.global_position
 			sonicwavechild.global_position.x += spawnoffset_x * owner.side
-			sonicwavechild.global_position.y += spawnoffset_y
+			sonicwavechild.global_position.y += spawnoffset_y + 70
 			print(sonicwavechild.global_position)
 			print(playerSprite.global_position)
 	else:
