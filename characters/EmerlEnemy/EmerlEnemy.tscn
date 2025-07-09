@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b5ktmlctsbml5"]
+[gd_scene load_steps=31 format=3 uid="uid://b5ktmlctsbml5"]
 
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EmerlEnemy.gd" id="1_7o0sq"]
 [ext_resource type="Texture2D" uid="uid://bdixhcctgyw6r" path="res://assets/emerl_sprites_bgremove.png" id="1_8bmpd"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitFall.gd" id="11_jnufg"]
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitDown.gd" id="12_mqogx"]
 [ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitAway.gd" id="13_h0b3w"]
+[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyMove.gd" id="14_41g4l"]
+[ext_resource type="Script" path="res://characters/EmerlEnemy/DetectPlayer.gd" id="15_wjqm5"]
 
 [sub_resource type="Animation" id="Animation_3ob5h"]
 length = 0.001
@@ -1122,6 +1124,24 @@ tracks/8/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_qayuj"]
+resource_name = "move"
+length = 0.533337
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(1, 48, 23, 38), Rect2(44, 50, 30, 36), Rect2(79, 49, 27, 37), Rect2(111, 47, 20, 39), Rect2(136, 47, 26, 39), Rect2(167, 49, 29, 37), Rect2(201, 48, 26, 38), Rect2(232, 47, 21, 39), Rect2(258, 47, 25, 39)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_luax0"]
 _data = {
 "RESET": SubResource("Animation_3ob5h"),
@@ -1133,7 +1153,8 @@ _data = {
 "knockback_down": SubResource("Animation_2silp"),
 "knockback_fall": SubResource("Animation_vbcj4"),
 "knockback_up": SubResource("Animation_2i4y3"),
-"knockdown": SubResource("Animation_c460u")
+"knockdown": SubResource("Animation_c460u"),
+"move": SubResource("Animation_qayuj")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgpgy"]
@@ -1142,11 +1163,16 @@ size = Vector2(20, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a54f"]
 size = Vector2(20, 32)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpxt3"]
+radius = 25.0
+height = 200.0
+
 [node name="EmerlEnemy" type="CharacterBody2D"]
 scale = Vector2(4, 4)
 collision_layer = 0
 collision_mask = 256
 script = ExtResource("1_7o0sq")
+slowdownMod = 20
 
 [node name="CharSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_8bmpd")
@@ -1205,6 +1231,17 @@ script = ExtResource("9_i5km4")
 
 [node name="EnemyGetup" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("10_m7fdj")
+
+[node name="EnemyMove" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("14_41g4l")
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+script = ExtResource("15_wjqm5")
+
+[node name="DetectPlayerShape" type="CollisionShape2D" parent="DetectPlayer"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bpxt3")
+debug_color = Color(0, 0.6, 0.258824, 0.419608)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyKnockdown" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="EnemyStateMachine/EnemyGetup" method="_on_animation_finished"]

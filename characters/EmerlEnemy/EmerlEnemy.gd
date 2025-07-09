@@ -40,8 +40,9 @@ func set_char_velocity(_delta: float):
 	else:
 		if tumble:
 			pass
-			#velocity.x = move_toward(velocity.x, 0, slowdownMod)
+			velocity.x = move_toward(velocity.x, 0, slowdownMod)
 		else:
+			pass
 			velocity.x = move_toward(velocity.x, 0, slowdownMod)
 		
 	if hitknockbackY != 0:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=49 format=3 uid="uid://dp3i02gf7dvgm"]
+[gd_scene load_steps=51 format=3 uid="uid://dp3i02gf7dvgm"]
 
 [ext_resource type="Texture2D" uid="uid://b8w8ssvevkyrd" path="res://assets/10039_bgremove.png" id="1_p8in5"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/sonic_charscript.gd" id="1_w45x4"]
 [ext_resource type="Script" path="res://generics/StateMachine.gd" id="3_c5jow"]
+[ext_resource type="Script" path="res://generics/hurtbox.gd" id="3_jcdty"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerIdle.gd" id="4_8h8ba"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMove.gd" id="5_l0p3c"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMoveTurn.gd" id="7_bglse"]
@@ -1718,6 +1719,9 @@ _data = {
 "turn": SubResource("Animation_f8vuu")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkw6x"]
+size = Vector2(20, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogedt"]
 size = Vector2(20, 32)
 
@@ -1772,6 +1776,15 @@ libraries = {
 "": SubResource("AnimationLibrary_lmqce")
 }
 speed_scale = 1.3
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("hurtboxArea")]
+script = ExtResource("3_jcdty")
+hurtboxArea = NodePath("HurtboxShape")
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_nkw6x")
+debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="PlayerCol" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)

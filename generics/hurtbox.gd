@@ -6,7 +6,7 @@ extends Area2D
 @onready var lastGroupCollision = ""
 
 func _init() -> void:
-	collision_layer = 0
+	collision_layer = 4
 	collision_mask = 2
 
 func _ready() -> void:
@@ -18,7 +18,7 @@ func _on_area_entered(hitbox: HitBox) -> void:
 		return
 	else:
 		var allowHit = true;
-		if owner.has_method("get_hit"):
+		if owner.has_method("get_hit") and hitbox.owner != owner:
 			if hitbox.isGrouped:
 				if lastGroupCollision == hitbox.groupName:
 					allowHit = false;
