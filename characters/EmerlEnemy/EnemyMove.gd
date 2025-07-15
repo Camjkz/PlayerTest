@@ -2,6 +2,7 @@ extends State
 class_name EnemyMove
 
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
+@onready var detectPlayer : Area2D = %DetectPlayer
 
 var animList : PackedStringArray = []
 
@@ -22,4 +23,4 @@ func update(_delta: float):
 
 
 func physics_update(_delta: float):
-	pass
+	owner.velocity.x = detectPlayer.moveDirection * owner.moveSpd * _delta

@@ -1,5 +1,8 @@
 extends Area2D
 
+@onready var stateMachine : StateMachine = %EnemyStateMachine
+@onready var moveDirection : int = 0
+
 func _init():
 	collision_mask = 4
 
@@ -16,7 +19,11 @@ func _process(delta):
 
 
 func _on_area_entered(hurtbox: Hurtbox):
-	print(hurtbox.owner)
+	if hurtbox.owner.name.contains("Player"):
+		moveDirection = 1 if hurtbox.hurtboxArea.global_position.x - global_position.x > 0 else -1
+		stateMachine.on_child_transition(stateMachine.currentState, "EnemyMove")
 
 func _on_area_exited(hurtbox: Hurtbox):
-	print(hurtbox.owner)
+	if hurtbox.owner.name.contains("Player"):
+		moveDirection = 0
+		stateMachine.on_child_transition(stateMachine.currentState, "EnemyIdle")
