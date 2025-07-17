@@ -20,6 +20,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3
 @onready var hurtbox : Area2D = %Hurtbox
 @onready var detectPlayer : Area2D = %DetectPlayer
 
+@onready var moveDirection : int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -54,9 +56,9 @@ func set_char_velocity(_delta: float):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if detectPlayer.moveDirection == 1:
+	if moveDirection == 1:
 		flip_char("right")
-	elif detectPlayer.moveDirection == -1:
+	elif moveDirection == -1:
 		flip_char("left")
 	
 

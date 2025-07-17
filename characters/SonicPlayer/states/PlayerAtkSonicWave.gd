@@ -43,13 +43,12 @@ func update(_delta: float):
 		if animPlayer.current_animation_position >= 0.5 && !projectilespawned:
 			print(get_tree().current_scene.name)
 			sonicwavechild.setParams(owner.side)
+			sonicwavechild.projectileOwner = owner
 			get_tree().current_scene.add_child(sonicwavechild)
 			projectilespawned = true
 			sonicwavechild.global_position = playerSprite.global_position
 			sonicwavechild.global_position.x += spawnoffset_x * owner.side
 			sonicwavechild.global_position.y += spawnoffset_y + 70
-			print(sonicwavechild.global_position)
-			print(playerSprite.global_position)
 	else:
 		chosenState = "PlayerIdle"
 	
@@ -58,15 +57,6 @@ func update(_delta: float):
 	
 	if chosenState != "":
 		transition.emit(self, chosenState)
-
-
-#func setup_hitboxes():
-	#hitboxshapes = []
-	#hitboxshapes = hitbox.get_children()
-	#for hitbox in hitboxshapes:
-		##hitboxpositions.append(hitbox.position.x)
-		#hitboxrotations.append(hitbox.rotation)
-	#maxindex = hitboxshapes.size()
 	
 	
 func handle_anim_side_values():

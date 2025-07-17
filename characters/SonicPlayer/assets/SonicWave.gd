@@ -7,6 +7,7 @@ extends Node2D
 @onready var waveSprite : Sprite2D = %WaveSprite
 @onready var hitbox : HitBox = %WaveHitbox
 @onready var side
+@onready var projectileOwner
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

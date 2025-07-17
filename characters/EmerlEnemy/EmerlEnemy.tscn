@@ -1186,7 +1186,6 @@ libraries = {
 }
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wgpgy")
 
@@ -1237,6 +1236,9 @@ script = ExtResource("14_41g4l")
 
 [node name="DetectPlayer" type="Area2D" parent="."]
 unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+monitorable = false
 script = ExtResource("15_wjqm5")
 
 [node name="DetectPlayerShape" type="CollisionShape2D" parent="DetectPlayer"]

@@ -19,6 +19,9 @@ func _on_area_entered(hitbox: HitBox) -> void:
 	else:
 		var allowHit = true;
 		if owner.has_method("get_hit") and hitbox.owner != owner:
+			if "projectileOwner" in hitbox.owner:
+				if hitbox.owner.projectileOwner == owner:
+					return
 			if hitbox.isGrouped:
 				if lastGroupCollision == hitbox.groupName:
 					allowHit = false;

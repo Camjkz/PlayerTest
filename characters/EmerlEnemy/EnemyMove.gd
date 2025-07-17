@@ -23,4 +23,4 @@ func update(_delta: float):
 
 
 func physics_update(_delta: float):
-	owner.velocity.x = detectPlayer.moveDirection * owner.moveSpd * _delta
+	owner.velocity.x = owner.moveDirection * owner.moveSpd * _delta
