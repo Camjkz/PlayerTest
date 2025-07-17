@@ -3,6 +3,7 @@ extends Area2D
 @onready var stateMachine : StateMachine = %EnemyStateMachine
 
 @onready var detectedHurtbox : Hurtbox = null
+@export var stopMovingAt : float = 100
 
 func _init():
 	collision_mask = 4
@@ -17,7 +18,18 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if detectedHurtbox != null:
-		owner.moveDirection = 1 if detectedHurtbox.hurtboxArea.global_position.x - global_position.x > 0 else -1
+		var distance = get_distance_from_hurtbox(detectedHurtbox)
+		if distance > 0:
+			owner.moveDirection = 1 
+		else:
+			owner.moveDirection = -1
+		
+		if abs(distance) <= stopMovingAt:
+			owner.moveDirection = 0
+
+
+func get_distance_from_hurtbox(hurtbox : Hurtbox) -> float:
+	return detectedHurtbox.hurtboxArea.global_position.x - global_position.x
 
 
 func _on_area_entered(hurtbox: Hurtbox):

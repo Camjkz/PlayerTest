@@ -24,7 +24,10 @@ func update(_delta: float):
 			#chosenState = "EnemyKnockdown"
 		#else:
 			#chosenState = "EnemyIdle"
-		chosenState = "EnemyIdle"
+		if owner.moveDirection != 0:
+			chosenState = "EnemyMove"
+		else:
+			chosenState = "EnemyIdle"
 	
 	transition.emit(self, chosenState)
 

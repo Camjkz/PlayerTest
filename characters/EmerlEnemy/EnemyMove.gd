@@ -19,8 +19,16 @@ func exit():
 	animPlayer.stop()
 
 func update(_delta: float):
-	pass
-
+	var chosenState = ""
+	
+	if owner.moveDirection == 0:
+		chosenState = "EnemyIdle"
+	
+	if owner.velocity.y > 0:
+		chosenState = "EnemyFall"
+	
+	if chosenState != "":
+		transition.emit(self, chosenState)
 
 func physics_update(_delta: float):
 	owner.velocity.x = owner.moveDirection * owner.moveSpd * _delta
