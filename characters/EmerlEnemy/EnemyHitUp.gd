@@ -24,8 +24,8 @@ func update(_delta: float):
 		owner.hitstun = 0
 		chosenState = "EnemyHitFall"
 	
-	if owner.is_on_floor():
-		chosenState = "EnemyKnockdown"
+	#if owner.is_on_floor():
+		#chosenState = "EnemyKnockdown"
 	
 	transition.emit(self, chosenState)
 

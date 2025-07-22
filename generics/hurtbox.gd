@@ -4,6 +4,8 @@ extends Area2D
 @export var hurtboxArea : CollisionShape2D
 
 @onready var lastGroupCollision = ""
+#@onready var lastGroupHitCooldownDefault = 0.1
+#@onready var lastGroupHitCooldown = 0
 
 func _init() -> void:
 	collision_layer = 4
@@ -12,6 +14,10 @@ func _init() -> void:
 func _ready() -> void:
 	connect("area_entered", _on_area_entered)
 	connect("area_exited", _on_area_exited)
+	
+#func _physics_process(delta):
+	#if lastGroupCollision != "" and lastGroupHitCooldown > 0:
+		#lastGroupHitCooldown -= delta
 	
 func _on_area_entered(hitbox: HitBox) -> void:
 	if hitbox == null:
@@ -27,7 +33,10 @@ func _on_area_entered(hitbox: HitBox) -> void:
 					allowHit = false;
 				if lastGroupCollision == "":
 					lastGroupCollision = hitbox.groupName
-			if allowHit:	
+					#if lastGroupHitCooldown <= 0:
+						#lastGroupHitCooldown = lastGroupHitCooldownDefault
+			if allowHit:
+				#print(lastGroupHitCooldown)
 				owner.get_hit(hitbox, self);
 
 func _on_area_exited(hitbox: HitBox) -> void:

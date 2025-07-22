@@ -24,7 +24,7 @@ func _physics_process(delta):
 	#move_and_slide()
 
 func _ready() -> void:
-	side = get_node("PlayerSprite").scale.x
+	side = 1 if get_node("PlayerSprite").scale.x > 0 else -1
 	#animation_player.play("idle")
 	
 func _process(delta):

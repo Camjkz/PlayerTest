@@ -8,6 +8,7 @@ extends Area2D
 @export var hitboxArea : CollisionShape2D
 @export var isMultiHit = false
 
+
 # if grouped, then only one of these hitboxes can hit a hurtbox at one times
 @export var isGrouped = false
 @export var groupName = ""
