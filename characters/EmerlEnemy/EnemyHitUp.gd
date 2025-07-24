@@ -24,8 +24,10 @@ func update(_delta: float):
 		owner.hitstun = 0
 		chosenState = "EnemyHitFall"
 	
-	#if owner.is_on_floor():
-		#chosenState = "EnemyKnockdown"
+	# currently has problems with the getup animation, using hitup when opp is getting up
+	# results in them getting hit up but also immediately touching the floor
+	if owner.is_on_floor():
+		chosenState = "EnemyKnockdown"
 	
 	transition.emit(self, chosenState)
 

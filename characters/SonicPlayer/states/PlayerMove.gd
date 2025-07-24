@@ -5,6 +5,7 @@ class_name PlayerMove
 
 var animList : PackedStringArray = []
 var currentSide : int = 0
+var currentSideDuration : float = 0
 
 func _ready():
 	animList = animPlayer.get_animation_list()
@@ -18,6 +19,7 @@ func exit():
 	animPlayer.stop()
 
 func update(_delta: float):
+	currentSideDuration += _delta
 	var chosenState = ""
 	if Input.is_action_just_pressed("ui_accept"):
 		chosenState = "PlayerJump"
@@ -30,6 +32,10 @@ func update(_delta: float):
 			chosenState = "PlayerAtk1"
 	elif Input.is_action_just_pressed("special"):
 		chosenState = "PlayerAtkSonicWave"
+	#elif ((Input.is_action_just_pressed("move_left") and currentSide == -1) or 
+	#(Input.is_action_just_pressed("move_right") and currentSide == 1)) and currentSideDuration <= 0.2:
+		#print("Dash!")
+		#pass
 	if owner.is_moving_pressed():
 		if currentSide != owner.side:
 			chosenState = "PlayerMoveTurn"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dp3i02gf7dvgm"]
+[gd_scene load_steps=54 format=3 uid="uid://dp3i02gf7dvgm"]
 
 [ext_resource type="Texture2D" uid="uid://b8w8ssvevkyrd" path="res://assets/10039_bgremove.png" id="1_p8in5"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/sonic_charscript.gd" id="1_w45x4"]
@@ -17,10 +17,12 @@
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk3.gd" id="10_r6i88"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkUp.gd" id="11_aw825"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAAtkSpike.gd" id="13_a7tyr"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/PlayerDash.gd" id="13_tyf3s"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkDown.gd" id="14_icd70"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerIdleTurn.gd" id="15_xq056"]
 [ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkSonicWave.gd" id="18_5uqb2"]
 [ext_resource type="PackedScene" uid="uid://dhntkirqrjtnm" path="res://characters/SonicPlayer/assets/SonicWave.tscn" id="19_4gf3i"]
+[ext_resource type="Script" path="res://characters/SonicPlayer/InputInterpreter.gd" id="23_hljda"]
 
 [sub_resource type="Animation" id="Animation_k4770"]
 length = 0.001
@@ -1711,6 +1713,23 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_urt10"]
+resource_name = "dash"
+length = 0.400007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(14, 233, 25, 33), Rect2(44, 233, 30, 32), Rect2(79, 234, 30, 32), Rect2(114, 234, 24, 34), Rect2(142, 234, 31, 34), Rect2(178, 236, 35, 29), Rect2(218, 235, 34, 29)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lmqce"]
 _data = {
 "RESET": SubResource("Animation_k4770"),
@@ -1721,6 +1740,7 @@ _data = {
 "atkdown": SubResource("Animation_e67ij"),
 "atksonicwave": SubResource("Animation_ijybc"),
 "atkup": SubResource("Animation_ym5ju"),
+"dash": SubResource("Animation_urt10"),
 "fall": SubResource("Animation_bj8jv"),
 "idle": SubResource("Animation_vhy8b"),
 "jump": SubResource("Animation_cc7q7"),
@@ -1809,6 +1829,9 @@ position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_t8jxu")
 debug_color = Color(0.745098, 0.207843, 1, 0.419608)
 
+[node name="InputInterpreter" type="Node" parent="."]
+script = ExtResource("23_hljda")
+
 [node name="PlayerStateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 unique_name_in_owner = true
 script = ExtResource("3_c5jow")
@@ -1837,6 +1860,9 @@ script = ExtResource("7_fhgxl")
 
 [node name="PlayerLand" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("8_ei2dd")
+
+[node name="PlayerDash" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("13_tyf3s")
 
 [node name="PlayerAtk1" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("8_qsioo")
