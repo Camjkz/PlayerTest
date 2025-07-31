@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://0yqrftcxxswm"]
 
-[ext_resource type="Script" path="res://game_settings/templates/audio/audio_volume.gd" id="1_1j04i"]
+[ext_resource type="Script" uid="uid://daeplwmk22l86" path="res://game_settings/templates/audio/audio_volume.gd" id="1_1j04i"]
 
 [resource]
 resource_name = "master_volume"

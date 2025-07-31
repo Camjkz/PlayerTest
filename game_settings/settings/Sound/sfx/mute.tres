@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://r256quwmrcjw"]
 
-[ext_resource type="Script" path="res://game_settings/templates/audio/audio_mute.gd" id="1_5naah"]
+[ext_resource type="Script" uid="uid://dv588kdr4kdol" path="res://game_settings/templates/audio/audio_mute.gd" id="1_5naah"]
 
 [resource]
 resource_name = "sfx_mute"

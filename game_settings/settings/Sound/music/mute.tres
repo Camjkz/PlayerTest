@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnpcq5fqxeq43"]
 
-[ext_resource type="Script" path="res://game_settings/templates/audio/audio_mute.gd" id="1_764wt"]
+[ext_resource type="Script" uid="uid://dv588kdr4kdol" path="res://game_settings/templates/audio/audio_mute.gd" id="1_764wt"]
 
 [resource]
 resource_name = "music_mute"

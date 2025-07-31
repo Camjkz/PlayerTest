@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgam7nxe4vuqa"]
 
 [ext_resource type="Texture2D" uid="uid://mqw434huuhat" path="res://assets/misceffects_1_bgremove.png" id="1_gba20"]
-[ext_resource type="Script" path="res://effects/LightHit.gd" id="1_o5rqy"]
+[ext_resource type="Script" uid="uid://bw803kbw5cgtu" path="res://effects/LightHit.gd" id="1_o5rqy"]
 
 [sub_resource type="Animation" id="Animation_acrye"]
 length = 0.001
@@ -37,8 +37,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4gcw3"]
 _data = {
-"RESET": SubResource("Animation_acrye"),
-"play": SubResource("Animation_g5k50")
+&"RESET": SubResource("Animation_acrye"),
+&"play": SubResource("Animation_g5k50")
 }
 
 [node name="LightHit" type="Node2D"]

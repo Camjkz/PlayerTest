@@ -1,20 +1,20 @@
 [gd_scene load_steps=31 format=3 uid="uid://b5ktmlctsbml5"]
 
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EmerlEnemy.gd" id="1_7o0sq"]
+[ext_resource type="Script" uid="uid://chx2si4nsn2a1" path="res://characters/EmerlEnemy/EmerlEnemy.gd" id="1_7o0sq"]
 [ext_resource type="Texture2D" uid="uid://bdixhcctgyw6r" path="res://assets/emerl_sprites_bgremove.png" id="1_8bmpd"]
-[ext_resource type="Script" path="res://generics/hurtbox.gd" id="3_82nry"]
-[ext_resource type="Script" path="res://generics/StateMachine.gd" id="4_gy686"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/States/EnemyIdle.gd" id="5_nqmx6"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitGrounded.gd" id="6_y8cb8"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitUp.gd" id="7_hcoo1"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyFall.gd" id="8_8bib7"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyKnockdown.gd" id="9_i5km4"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyGetup.gd" id="10_m7fdj"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitFall.gd" id="11_jnufg"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitDown.gd" id="12_mqogx"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyHitAway.gd" id="13_h0b3w"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/EnemyMove.gd" id="14_41g4l"]
-[ext_resource type="Script" path="res://characters/EmerlEnemy/DetectPlayer.gd" id="15_wjqm5"]
+[ext_resource type="Script" uid="uid://c6whxgfwfkgij" path="res://generics/hurtbox.gd" id="3_82nry"]
+[ext_resource type="Script" uid="uid://dtbjsgk52o51b" path="res://generics/StateMachine.gd" id="4_gy686"]
+[ext_resource type="Script" uid="uid://bq7sedeer4wyq" path="res://characters/EmerlEnemy/States/EnemyIdle.gd" id="5_nqmx6"]
+[ext_resource type="Script" uid="uid://b1okem0fs5ygx" path="res://characters/EmerlEnemy/EnemyHitGrounded.gd" id="6_y8cb8"]
+[ext_resource type="Script" uid="uid://cby17oogl7jj7" path="res://characters/EmerlEnemy/EnemyHitUp.gd" id="7_hcoo1"]
+[ext_resource type="Script" uid="uid://cl3jh2fdejn2s" path="res://characters/EmerlEnemy/EnemyFall.gd" id="8_8bib7"]
+[ext_resource type="Script" uid="uid://dytc7i8iwjbg5" path="res://characters/EmerlEnemy/EnemyKnockdown.gd" id="9_i5km4"]
+[ext_resource type="Script" uid="uid://dg4jf5cjta724" path="res://characters/EmerlEnemy/EnemyGetup.gd" id="10_m7fdj"]
+[ext_resource type="Script" uid="uid://cvyxcn6vo3fbp" path="res://characters/EmerlEnemy/EnemyHitFall.gd" id="11_jnufg"]
+[ext_resource type="Script" uid="uid://ck8t3k3jpi5ab" path="res://characters/EmerlEnemy/EnemyHitDown.gd" id="12_mqogx"]
+[ext_resource type="Script" uid="uid://c61sd5h6oelt7" path="res://characters/EmerlEnemy/EnemyHitAway.gd" id="13_h0b3w"]
+[ext_resource type="Script" uid="uid://btydxdek4hvm3" path="res://characters/EmerlEnemy/EnemyMove.gd" id="14_41g4l"]
+[ext_resource type="Script" uid="uid://du63r4o3v4fi6" path="res://characters/EmerlEnemy/DetectPlayer.gd" id="15_wjqm5"]
 
 [sub_resource type="Animation" id="Animation_3ob5h"]
 length = 0.001
@@ -1144,17 +1144,17 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_luax0"]
 _data = {
-"RESET": SubResource("Animation_3ob5h"),
-"fall": SubResource("Animation_7ve8r"),
-"get_hit_grounded": SubResource("Animation_r5kc7"),
-"getup": SubResource("Animation_cevlo"),
-"idle": SubResource("Animation_genus"),
-"knockback_away": SubResource("Animation_yxal5"),
-"knockback_down": SubResource("Animation_2silp"),
-"knockback_fall": SubResource("Animation_vbcj4"),
-"knockback_up": SubResource("Animation_2i4y3"),
-"knockdown": SubResource("Animation_c460u"),
-"move": SubResource("Animation_qayuj")
+&"RESET": SubResource("Animation_3ob5h"),
+&"fall": SubResource("Animation_7ve8r"),
+&"get_hit_grounded": SubResource("Animation_r5kc7"),
+&"getup": SubResource("Animation_cevlo"),
+&"idle": SubResource("Animation_genus"),
+&"knockback_away": SubResource("Animation_yxal5"),
+&"knockback_down": SubResource("Animation_2silp"),
+&"knockback_fall": SubResource("Animation_vbcj4"),
+&"knockback_up": SubResource("Animation_2i4y3"),
+&"knockdown": SubResource("Animation_c460u"),
+&"move": SubResource("Animation_qayuj")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgpgy"]
@@ -1182,7 +1182,7 @@ region_rect = Rect2(1, 4, 21, 38)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_luax0")
+&"": SubResource("AnimationLibrary_luax0")
 }
 
 [node name="Collision" type="CollisionShape2D" parent="."]

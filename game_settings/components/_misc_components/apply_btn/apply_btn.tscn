@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://cpb3rtpobbndb"]
 
-[ext_resource type="Script" path="res://game_settings/components/_misc_components/apply_btn/apply_btn.gd" id="1_dk1tm"]
+[ext_resource type="Script" uid="uid://cj44tkcqw2rjc" path="res://game_settings/components/_misc_components/apply_btn/apply_btn.gd" id="1_dk1tm"]
 
 [node name="ApplyBtn" type="Button"]
 anchors_preset = 15

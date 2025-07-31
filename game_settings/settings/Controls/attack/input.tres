@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ggsInputSetting" load_steps=4 format=3 uid="uid://e0pm47ul1vop"]
 
-[ext_resource type="Script" path="res://game_settings/templates/input.gd" id="1_b64gn"]
+[ext_resource type="Script" uid="uid://blbm3wh4fi1ic" path="res://game_settings/templates/input.gd" id="1_b64gn"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_7w5it"]
 device = -1

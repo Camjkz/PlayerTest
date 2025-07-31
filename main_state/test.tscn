@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cq2ltssjaa0ya" path="res://characters/Dummy/dummy.tscn" id="1_khq6l"]
 [ext_resource type="PackedScene" uid="uid://b5ktmlctsbml5" path="res://characters/EmerlEnemy/EmerlEnemy.tscn" id="3_d7ujw"]
 [ext_resource type="PackedScene" uid="uid://dp3i02gf7dvgm" path="res://characters/SonicPlayer/SonicPlayer.tscn" id="3_k4cma"]
-[ext_resource type="Script" path="res://main_state/checkFPS.gd" id="4_uboc8"]
-[ext_resource type="Script" path="res://main_state/HitHandler.gd" id="5_hbo7h"]
+[ext_resource type="Script" uid="uid://c0n8upyuls4qt" path="res://main_state/checkFPS.gd" id="4_uboc8"]
+[ext_resource type="Script" uid="uid://deidtaa1wr1cr" path="res://main_state/HitHandler.gd" id="5_hbo7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5payx"]
 size = Vector2(1280, 232)

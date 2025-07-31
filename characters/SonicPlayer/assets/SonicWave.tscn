@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dhntkirqrjtnm"]
 
 [ext_resource type="Texture2D" uid="uid://btt6oaq5rh5sj" path="res://assets/10039_bgremove_2.png" id="1_5mj1u"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/assets/SonicWave.gd" id="1_qn6xf"]
-[ext_resource type="Script" path="res://generics/hitbox.gd" id="2_g1jfj"]
+[ext_resource type="Script" uid="uid://d4k865r3jksjq" path="res://characters/SonicPlayer/assets/SonicWave.gd" id="1_qn6xf"]
+[ext_resource type="Script" uid="uid://dqjsp3k257t4q" path="res://generics/hitbox.gd" id="2_g1jfj"]
 
 [sub_resource type="Animation" id="Animation_wbu1u"]
 length = 0.001
@@ -242,11 +242,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bqfs8"]
 _data = {
-"RESET": SubResource("Animation_wbu1u"),
-"despawn": SubResource("Animation_vodyr"),
-"full": SubResource("Animation_g0e2d"),
-"launch": SubResource("Animation_wk22f"),
-"travel": SubResource("Animation_nbtbj")
+&"RESET": SubResource("Animation_wbu1u"),
+&"despawn": SubResource("Animation_vodyr"),
+&"full": SubResource("Animation_g0e2d"),
+&"launch": SubResource("Animation_wk22f"),
+&"travel": SubResource("Animation_nbtbj")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4j8p"]

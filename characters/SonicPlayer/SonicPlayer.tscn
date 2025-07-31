@@ -1,28 +1,28 @@
 [gd_scene load_steps=54 format=3 uid="uid://dp3i02gf7dvgm"]
 
 [ext_resource type="Texture2D" uid="uid://b8w8ssvevkyrd" path="res://assets/10039_bgremove.png" id="1_p8in5"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/sonic_charscript.gd" id="1_w45x4"]
-[ext_resource type="Script" path="res://generics/StateMachine.gd" id="3_c5jow"]
-[ext_resource type="Script" path="res://generics/hurtbox.gd" id="3_jcdty"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerIdle.gd" id="4_8h8ba"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMove.gd" id="5_l0p3c"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMoveTurn.gd" id="7_bglse"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerFall.gd" id="7_fhgxl"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerJump.gd" id="7_i36hw"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerLand.gd" id="8_ei2dd"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerMoveStop.gd" id="8_ommfa"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk1.gd" id="8_qsioo"]
-[ext_resource type="Script" path="res://generics/hitbox.gd" id="9_fucni"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk2.gd" id="9_k0sqx"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtk3.gd" id="10_r6i88"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkUp.gd" id="11_aw825"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAAtkSpike.gd" id="13_a7tyr"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/PlayerDash.gd" id="13_tyf3s"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkDown.gd" id="14_icd70"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerIdleTurn.gd" id="15_xq056"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/states/PlayerAtkSonicWave.gd" id="18_5uqb2"]
+[ext_resource type="Script" uid="uid://bjqapssd7t0h4" path="res://characters/SonicPlayer/sonic_charscript.gd" id="1_w45x4"]
+[ext_resource type="Script" uid="uid://dtbjsgk52o51b" path="res://generics/StateMachine.gd" id="3_c5jow"]
+[ext_resource type="Script" uid="uid://c6whxgfwfkgij" path="res://generics/hurtbox.gd" id="3_jcdty"]
+[ext_resource type="Script" uid="uid://bhsb5s6wmtfcd" path="res://characters/SonicPlayer/states/PlayerIdle.gd" id="4_8h8ba"]
+[ext_resource type="Script" uid="uid://dxj43n0fclf5y" path="res://characters/SonicPlayer/states/PlayerMove.gd" id="5_l0p3c"]
+[ext_resource type="Script" uid="uid://cimfs2qd30stb" path="res://characters/SonicPlayer/states/PlayerMoveTurn.gd" id="7_bglse"]
+[ext_resource type="Script" uid="uid://ddd8gdu473h62" path="res://characters/SonicPlayer/states/PlayerFall.gd" id="7_fhgxl"]
+[ext_resource type="Script" uid="uid://ba1t70td36ssv" path="res://characters/SonicPlayer/states/PlayerJump.gd" id="7_i36hw"]
+[ext_resource type="Script" uid="uid://bvuom6xs54svr" path="res://characters/SonicPlayer/states/PlayerLand.gd" id="8_ei2dd"]
+[ext_resource type="Script" uid="uid://cmhbw58o7cmjw" path="res://characters/SonicPlayer/states/PlayerMoveStop.gd" id="8_ommfa"]
+[ext_resource type="Script" uid="uid://b4p8i4upd1npq" path="res://characters/SonicPlayer/states/PlayerAtk1.gd" id="8_qsioo"]
+[ext_resource type="Script" uid="uid://dqjsp3k257t4q" path="res://generics/hitbox.gd" id="9_fucni"]
+[ext_resource type="Script" uid="uid://j2abhvfamd81" path="res://characters/SonicPlayer/states/PlayerAtk2.gd" id="9_k0sqx"]
+[ext_resource type="Script" uid="uid://eqqmksgyuaav" path="res://characters/SonicPlayer/states/PlayerAtk3.gd" id="10_r6i88"]
+[ext_resource type="Script" uid="uid://cnmrbxm6rmhfm" path="res://characters/SonicPlayer/states/PlayerAtkUp.gd" id="11_aw825"]
+[ext_resource type="Script" uid="uid://cvlkq8dfa0nhq" path="res://characters/SonicPlayer/states/PlayerAAtkSpike.gd" id="13_a7tyr"]
+[ext_resource type="Script" uid="uid://dp5r5e5ii7gb2" path="res://characters/SonicPlayer/PlayerDash.gd" id="13_tyf3s"]
+[ext_resource type="Script" uid="uid://biuda4tp36x3e" path="res://characters/SonicPlayer/states/PlayerAtkDown.gd" id="14_icd70"]
+[ext_resource type="Script" uid="uid://c0unb4e2fvt77" path="res://characters/SonicPlayer/states/PlayerIdleTurn.gd" id="15_xq056"]
+[ext_resource type="Script" uid="uid://j2j2lpigve4u" path="res://characters/SonicPlayer/states/PlayerAtkSonicWave.gd" id="18_5uqb2"]
 [ext_resource type="PackedScene" uid="uid://dhntkirqrjtnm" path="res://characters/SonicPlayer/assets/SonicWave.tscn" id="19_4gf3i"]
-[ext_resource type="Script" path="res://characters/SonicPlayer/InputInterpreter.gd" id="23_hljda"]
+[ext_resource type="Script" uid="uid://8s1gop0vwc57" path="res://characters/SonicPlayer/InputInterpreter.gd" id="23_hljda"]
 
 [sub_resource type="Animation" id="Animation_k4770"]
 length = 0.001
@@ -1461,6 +1461,23 @@ tracks/14/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_urt10"]
+resource_name = "dash"
+length = 0.400007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(14, 233, 25, 33), Rect2(44, 233, 30, 32), Rect2(79, 234, 30, 32), Rect2(114, 234, 24, 34), Rect2(142, 234, 31, 34), Rect2(178, 236, 35, 29), Rect2(218, 235, 34, 29)]
+}
+
 [sub_resource type="Animation" id="Animation_bj8jv"]
 resource_name = "fall"
 length = 0.30001
@@ -1713,42 +1730,25 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_urt10"]
-resource_name = "dash"
-length = 0.400007
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(14, 233, 25, 33), Rect2(44, 233, 30, 32), Rect2(79, 234, 30, 32), Rect2(114, 234, 24, 34), Rect2(142, 234, 31, 34), Rect2(178, 236, 35, 29), Rect2(218, 235, 34, 29)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lmqce"]
 _data = {
-"RESET": SubResource("Animation_k4770"),
-"airatk_spike": SubResource("Animation_a8exo"),
-"atk1": SubResource("Animation_p5aei"),
-"atk2": SubResource("Animation_uufl1"),
-"atk3": SubResource("Animation_gjjkg"),
-"atkdown": SubResource("Animation_e67ij"),
-"atksonicwave": SubResource("Animation_ijybc"),
-"atkup": SubResource("Animation_ym5ju"),
-"dash": SubResource("Animation_urt10"),
-"fall": SubResource("Animation_bj8jv"),
-"idle": SubResource("Animation_vhy8b"),
-"jump": SubResource("Animation_cc7q7"),
-"land": SubResource("Animation_3ep7j"),
-"move": SubResource("Animation_tq08u"),
-"run_turn": SubResource("Animation_o2mws"),
-"stop": SubResource("Animation_uetqj"),
-"turn": SubResource("Animation_f8vuu")
+&"RESET": SubResource("Animation_k4770"),
+&"airatk_spike": SubResource("Animation_a8exo"),
+&"atk1": SubResource("Animation_p5aei"),
+&"atk2": SubResource("Animation_uufl1"),
+&"atk3": SubResource("Animation_gjjkg"),
+&"atkdown": SubResource("Animation_e67ij"),
+&"atksonicwave": SubResource("Animation_ijybc"),
+&"atkup": SubResource("Animation_ym5ju"),
+&"dash": SubResource("Animation_urt10"),
+&"fall": SubResource("Animation_bj8jv"),
+&"idle": SubResource("Animation_vhy8b"),
+&"jump": SubResource("Animation_cc7q7"),
+&"land": SubResource("Animation_3ep7j"),
+&"move": SubResource("Animation_tq08u"),
+&"run_turn": SubResource("Animation_o2mws"),
+&"stop": SubResource("Animation_uetqj"),
+&"turn": SubResource("Animation_f8vuu")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkw6x"]
@@ -1805,7 +1805,7 @@ region_rect = Rect2(15, 18, 22, 32)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_lmqce")
+&"": SubResource("AnimationLibrary_lmqce")
 }
 speed_scale = 1.3
 

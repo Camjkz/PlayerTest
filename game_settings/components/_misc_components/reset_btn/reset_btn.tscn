@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://dnp4lf80rl00v"]
 
-[ext_resource type="Script" path="res://game_settings/components/_misc_components/reset_btn/reset_btn.gd" id="1_pchyd"]
+[ext_resource type="Script" uid="uid://b2tg1v3kxqr8h" path="res://game_settings/components/_misc_components/reset_btn/reset_btn.gd" id="1_pchyd"]
 
 [node name="ResetBtn" type="Button"]
 anchors_preset = 15

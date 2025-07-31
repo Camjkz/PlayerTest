@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://cnfsne6jj1ki1"]
 
-[ext_resource type="Script" path="res://characters/Adventurer/player_movement.gd" id="1_uvnxq"]
+[ext_resource type="Script" uid="uid://hndej0lvtbrt" path="res://characters/Adventurer/player_movement.gd" id="1_uvnxq"]
 [ext_resource type="Texture2D" uid="uid://bvhpqum5c8rah" path="res://assets/adventurer_sprite_sheet_v1.1.png" id="2_qp0cv"]
-[ext_resource type="Script" path="res://generics/hitbox.gd" id="3_lok7t"]
-[ext_resource type="Script" path="res://generics/hurtbox.gd" id="4_0gqvm"]
+[ext_resource type="Script" uid="uid://dqjsp3k257t4q" path="res://generics/hitbox.gd" id="3_lok7t"]
+[ext_resource type="Script" uid="uid://c6whxgfwfkgij" path="res://generics/hurtbox.gd" id="4_0gqvm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7c2q"]
 size = Vector2(16, 24)
@@ -376,13 +376,13 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7lur7"]
 _data = {
-"RESET": SubResource("Animation_tg17t"),
-"atk1": SubResource("Animation_hq35h"),
-"atk2": SubResource("Animation_agmd3"),
-"fall": SubResource("Animation_52oic"),
-"idle": SubResource("Animation_5eiki"),
-"jump": SubResource("Animation_7utpu"),
-"move": SubResource("Animation_wu4ff")
+&"RESET": SubResource("Animation_tg17t"),
+&"atk1": SubResource("Animation_hq35h"),
+&"atk2": SubResource("Animation_agmd3"),
+&"fall": SubResource("Animation_52oic"),
+&"idle": SubResource("Animation_5eiki"),
+&"jump": SubResource("Animation_7utpu"),
+&"move": SubResource("Animation_wu4ff")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxcdd"]
