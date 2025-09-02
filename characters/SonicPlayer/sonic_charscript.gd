@@ -24,7 +24,7 @@ func _physics_process(delta):
 	#move_and_slide()
 
 func _ready() -> void:
-	side = 1 if get_node("PlayerSprite").scale.x > 0 else -1
+	side = 1 if get_node("Flipper").scale.x > 0 else -1
 	#animation_player.play("idle")
 	
 func _process(delta):
@@ -80,10 +80,10 @@ func set_char_velocity(_delta: float):
 
 func flip_char(direction: String):
 	if direction == "right":
-		get_node("PlayerSprite").scale.x = 1
+		get_node("Flipper").scale.x = 1
 		side = 1
 	elif direction == "left":
-		get_node("PlayerSprite").scale.x = -1
+		get_node("Flipper").scale.x = -1
 		side = -1
 
 

@@ -14,6 +14,7 @@ func _ready():
 	timeleft = lifetime
 	waveSprite.scale.x = waveSprite.scale.x * side
 	hitbox.hitboxArea.position.x = hitbox.hitboxArea.position.x * side
+	
 	animPlayer.play("launch")
 	
 

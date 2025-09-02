@@ -253,6 +253,7 @@ _data = {
 radius = 15.0
 
 [node name="SonicWave" type="Node2D"]
+z_index = 1
 scale = Vector2(3, 3)
 script = ExtResource("1_qn6xf")
 
@@ -266,7 +267,7 @@ region_rect = Rect2(60, 128, 31, 30)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_bqfs8")
+&"": SubResource("AnimationLibrary_bqfs8")
 }
 
 [node name="WaveHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]

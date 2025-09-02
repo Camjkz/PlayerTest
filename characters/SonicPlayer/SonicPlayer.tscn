@@ -29,7 +29,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -65,7 +65,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:position")
+tracks/3/path = NodePath("Flipper/PlayerSprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -77,406 +77,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Atk1Hitbox/Hitbox1:disabled")
+tracks/4/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Atk1Hitbox/Hitbox1:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Atk2Hitbox/Hitbox1:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Atk2Hitbox/Hitbox1:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Atk2Hitbox/Hitbox1:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(6, 8)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Atk3Hitbox/Hitbox1:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(12, 4)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Atk3Hitbox/Hitbox1:disabled")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Atk3Hitbox/Hitbox1:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("AtkUpHitbox/Hitbox1:disabled")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("AtkUpHitbox/Hitbox1:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("AtkUpHitbox2/Hitbox2:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("AtkUpHitbox2/Hitbox2:disabled")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("AtkUpHitbox3/Hitbox3:disabled")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("AtkUpHitbox3/Hitbox3:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("AtkUpHitbox/Hitbox1:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(14, 0)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("AtkUpHitbox2/Hitbox2:position")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, -18)]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("AtkUpHitbox3/Hitbox3:position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, -24)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("AtkUpHitbox/Hitbox1:rotation")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.785398]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("AtkUpHitbox2/Hitbox2:rotation")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-1.5708]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("AtkUpHitbox3/Hitbox3:rotation")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.959931]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("AAtkSpikeHitbox/Hitbox1:position")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(6, -8)]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("AAtkSpikeHitbox/Hitbox1:rotation")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-1.13446]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("AAtkSpikeHitbox/Hitbox1:disabled")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("AAtkSpikeHitbox/Hitbox1:visible")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("AAtkSpikeHitbox/Hitbox1:shape:radius")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [10.0]
-}
-tracks/29/type = "value"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("AAtkSpikeHitbox/Hitbox1:shape:height")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [40.0]
-}
-tracks/30/type = "value"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("AtkDownHitbox/Hitbox1:disabled")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/31/type = "value"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("AtkDownHitbox/Hitbox1:visible")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/32/type = "value"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("AtkDownHitbox/Hitbox1:position")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(15, 0)]
-}
-tracks/33/type = "value"
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/path = NodePath("Atk1Hitbox/Hitbox1:position")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(20, 0)]
-}
-tracks/34/type = "value"
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/path = NodePath("AtkDownHitbox2/Hitbox1:disabled")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/35/type = "value"
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/path = NodePath("AtkDownHitbox2/Hitbox1:visible")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/36/type = "value"
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/path = NodePath("AtkDownHitbox2/Hitbox1:position")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/37/type = "value"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("PlayerSprite:flip_h")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -490,7 +94,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -502,7 +106,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AAtkSpikeHitbox/Hitbox1:position")
+tracks/1/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -514,7 +118,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AAtkSpikeHitbox/Hitbox1:rotation")
+tracks/2/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -526,7 +130,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AAtkSpikeHitbox/Hitbox1:disabled")
+tracks/3/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -538,7 +142,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AAtkSpikeHitbox/Hitbox1:visible")
+tracks/4/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -550,7 +154,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AAtkSpikeHitbox/Hitbox1:shape:radius")
+tracks/5/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:shape:radius")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -562,7 +166,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("AAtkSpikeHitbox/Hitbox1:shape:height")
+tracks/6/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:shape:height")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -574,7 +178,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("PlayerSprite:flip_h")
+tracks/7/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -587,10 +191,11 @@ tracks/7/keys = {
 [sub_resource type="Animation" id="Animation_p5aei"]
 resource_name = "atk1"
 length = 0.50001
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -602,7 +207,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Atk1Hitbox/Hitbox1:disabled")
+tracks/1/path = NodePath("Flipper/Atk1Hitbox/Hitbox1:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -614,7 +219,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Atk1Hitbox/Hitbox1:visible")
+tracks/2/path = NodePath("Flipper/Atk1Hitbox/Hitbox1:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -626,7 +231,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:position")
+tracks/3/path = NodePath("Flipper/PlayerSprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -638,7 +243,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Atk1Hitbox/Hitbox1:position")
+tracks/4/path = NodePath("Flipper/Atk1Hitbox/Hitbox1:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -650,7 +255,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PlayerSprite:flip_h")
+tracks/5/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -666,7 +271,7 @@ length = 0.50001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -678,7 +283,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Atk2Hitbox/Hitbox1:disabled")
+tracks/1/path = NodePath("Flipper/Atk2Hitbox/Hitbox1:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -690,7 +295,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Atk2Hitbox/Hitbox1:visible")
+tracks/2/path = NodePath("Flipper/Atk2Hitbox/Hitbox1:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -702,7 +307,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Atk2Hitbox/Hitbox1:position")
+tracks/3/path = NodePath("Flipper/Atk2Hitbox/Hitbox1:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -714,7 +319,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerSprite:flip_h")
+tracks/4/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -730,7 +335,7 @@ length = 0.70001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -742,7 +347,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:position")
+tracks/1/path = NodePath("Flipper/PlayerSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -754,7 +359,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Atk3Hitbox/Hitbox1:position")
+tracks/2/path = NodePath("Flipper/Atk3Hitbox/Hitbox1:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -766,7 +371,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Atk3Hitbox/Hitbox1:disabled")
+tracks/3/path = NodePath("Flipper/Atk3Hitbox/Hitbox1:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -778,7 +383,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Atk3Hitbox/Hitbox1:visible")
+tracks/4/path = NodePath("Flipper/Atk3Hitbox/Hitbox1:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -790,7 +395,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PlayerSprite:flip_h")
+tracks/5/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -807,7 +412,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -843,7 +448,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:position")
+tracks/3/path = NodePath("Flipper/PlayerSprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -855,7 +460,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Atk1Hitbox/Hitbox1:disabled")
+tracks/4/path = NodePath("Flipper/Atk1Hitbox/Hitbox1:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -867,7 +472,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Atk1Hitbox/Hitbox1:visible")
+tracks/5/path = NodePath("Flipper/Atk1Hitbox/Hitbox1:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -879,7 +484,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Atk2Hitbox/Hitbox1:disabled")
+tracks/6/path = NodePath("Flipper/Atk2Hitbox/Hitbox1:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -891,7 +496,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Atk2Hitbox/Hitbox1:visible")
+tracks/7/path = NodePath("Flipper/Atk2Hitbox/Hitbox1:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -903,7 +508,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Atk2Hitbox/Hitbox1:position")
+tracks/8/path = NodePath("Flipper/Atk2Hitbox/Hitbox1:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -915,7 +520,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Atk3Hitbox/Hitbox1:position")
+tracks/9/path = NodePath("Flipper/Atk3Hitbox/Hitbox1:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -927,7 +532,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Atk3Hitbox/Hitbox1:disabled")
+tracks/10/path = NodePath("Flipper/Atk3Hitbox/Hitbox1:disabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -939,7 +544,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Atk3Hitbox/Hitbox1:visible")
+tracks/11/path = NodePath("Flipper/Atk3Hitbox/Hitbox1:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -951,7 +556,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("AtkUpHitbox/Hitbox1:disabled")
+tracks/12/path = NodePath("Flipper/AtkUpHitbox/Hitbox1:disabled")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -963,7 +568,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("AtkUpHitbox/Hitbox1:visible")
+tracks/13/path = NodePath("Flipper/AtkUpHitbox/Hitbox1:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -975,7 +580,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("AtkUpHitbox2/Hitbox2:visible")
+tracks/14/path = NodePath("Flipper/AtkUpHitbox2/Hitbox2:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -987,7 +592,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("AtkUpHitbox2/Hitbox2:disabled")
+tracks/15/path = NodePath("Flipper/AtkUpHitbox2/Hitbox2:disabled")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -999,7 +604,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("AtkUpHitbox3/Hitbox3:disabled")
+tracks/16/path = NodePath("Flipper/AtkUpHitbox3/Hitbox3:disabled")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -1011,7 +616,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("AtkUpHitbox3/Hitbox3:visible")
+tracks/17/path = NodePath("Flipper/AtkUpHitbox3/Hitbox3:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -1023,7 +628,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("AtkUpHitbox/Hitbox1:position")
+tracks/18/path = NodePath("Flipper/AtkUpHitbox/Hitbox1:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -1035,7 +640,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("AtkUpHitbox2/Hitbox2:position")
+tracks/19/path = NodePath("Flipper/AtkUpHitbox2/Hitbox2:position")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -1047,7 +652,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("AtkUpHitbox3/Hitbox3:position")
+tracks/20/path = NodePath("Flipper/AtkUpHitbox3/Hitbox3:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -1059,7 +664,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("AtkUpHitbox/Hitbox1:rotation")
+tracks/21/path = NodePath("Flipper/AtkUpHitbox/Hitbox1:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -1071,7 +676,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("AtkUpHitbox2/Hitbox2:rotation")
+tracks/22/path = NodePath("Flipper/AtkUpHitbox2/Hitbox2:rotation")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -1083,7 +688,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("AtkUpHitbox3/Hitbox3:rotation")
+tracks/23/path = NodePath("Flipper/AtkUpHitbox3/Hitbox3:rotation")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -1095,7 +700,7 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("AAtkSpikeHitbox/Hitbox1:position")
+tracks/24/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
@@ -1107,7 +712,7 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("AAtkSpikeHitbox/Hitbox1:rotation")
+tracks/25/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:rotation")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
@@ -1119,7 +724,7 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("AAtkSpikeHitbox/Hitbox1:disabled")
+tracks/26/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:disabled")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
@@ -1131,7 +736,7 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("AAtkSpikeHitbox/Hitbox1:visible")
+tracks/27/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:visible")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
@@ -1143,7 +748,7 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("AAtkSpikeHitbox/Hitbox1:shape:radius")
+tracks/28/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:shape:radius")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
@@ -1155,7 +760,7 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("AAtkSpikeHitbox/Hitbox1:shape:height")
+tracks/29/path = NodePath("Flipper/AAtkSpikeHitbox/Hitbox1:shape:height")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
@@ -1167,7 +772,7 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("AtkDownHitbox/Hitbox1:disabled")
+tracks/30/path = NodePath("Flipper/AtkDownHitbox/Hitbox1:disabled")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
@@ -1179,7 +784,7 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("AtkDownHitbox/Hitbox1:visible")
+tracks/31/path = NodePath("Flipper/AtkDownHitbox/Hitbox1:visible")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
@@ -1191,7 +796,7 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("AtkDownHitbox/Hitbox1:position")
+tracks/32/path = NodePath("Flipper/AtkDownHitbox/Hitbox1:position")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -1203,7 +808,7 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("AtkDownHitbox2/Hitbox1:disabled")
+tracks/33/path = NodePath("Flipper/AtkDownHitbox2/Hitbox1:disabled")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
@@ -1215,7 +820,7 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("AtkDownHitbox2/Hitbox1:visible")
+tracks/34/path = NodePath("Flipper/AtkDownHitbox2/Hitbox1:visible")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
@@ -1227,7 +832,7 @@ tracks/34/keys = {
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("AtkDownHitbox2/Hitbox1:position")
+tracks/35/path = NodePath("Flipper/AtkDownHitbox2/Hitbox1:position")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
@@ -1239,7 +844,7 @@ tracks/35/keys = {
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("PlayerSprite:flip_h")
+tracks/36/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
@@ -1255,7 +860,7 @@ length = 0.70001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1267,7 +872,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1283,7 +888,7 @@ length = 0.80001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1295,7 +900,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:position")
+tracks/1/path = NodePath("Flipper/PlayerSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1307,7 +912,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AtkUpHitbox/Hitbox1:disabled")
+tracks/2/path = NodePath("Flipper/AtkUpHitbox/Hitbox1:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1319,7 +924,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AtkUpHitbox/Hitbox1:visible")
+tracks/3/path = NodePath("Flipper/AtkUpHitbox/Hitbox1:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -1331,7 +936,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AtkUpHitbox2/Hitbox2:visible")
+tracks/4/path = NodePath("Flipper/AtkUpHitbox2/Hitbox2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -1343,7 +948,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AtkUpHitbox2/Hitbox2:disabled")
+tracks/5/path = NodePath("Flipper/AtkUpHitbox2/Hitbox2:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -1355,7 +960,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("AtkUpHitbox3/Hitbox3:disabled")
+tracks/6/path = NodePath("Flipper/AtkUpHitbox3/Hitbox3:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1367,7 +972,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("AtkUpHitbox3/Hitbox3:visible")
+tracks/7/path = NodePath("Flipper/AtkUpHitbox3/Hitbox3:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1379,7 +984,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("AtkUpHitbox/Hitbox1:position")
+tracks/8/path = NodePath("Flipper/AtkUpHitbox/Hitbox1:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1391,7 +996,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("AtkUpHitbox2/Hitbox2:position")
+tracks/9/path = NodePath("Flipper/AtkUpHitbox2/Hitbox2:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1403,7 +1008,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("AtkUpHitbox3/Hitbox3:position")
+tracks/10/path = NodePath("Flipper/AtkUpHitbox3/Hitbox3:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -1415,7 +1020,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("AtkUpHitbox/Hitbox1:rotation")
+tracks/11/path = NodePath("Flipper/AtkUpHitbox/Hitbox1:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -1427,7 +1032,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("AtkUpHitbox2/Hitbox2:rotation")
+tracks/12/path = NodePath("Flipper/AtkUpHitbox2/Hitbox2:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -1439,7 +1044,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("AtkUpHitbox3/Hitbox3:rotation")
+tracks/13/path = NodePath("Flipper/AtkUpHitbox3/Hitbox3:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -1451,7 +1056,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("PlayerSprite:flip_h")
+tracks/14/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -1468,7 +1073,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1484,7 +1089,7 @@ length = 0.30001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1496,7 +1101,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1514,7 +1119,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1526,7 +1131,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:position")
+tracks/1/path = NodePath("Flipper/PlayerSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1538,7 +1143,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1554,7 +1159,7 @@ length = 0.40001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1566,7 +1171,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1582,7 +1187,7 @@ length = 0.20001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1594,7 +1199,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:position")
+tracks/1/path = NodePath("Flipper/PlayerSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1606,7 +1211,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:flip_h")
+tracks/2/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1624,7 +1229,7 @@ step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1636,7 +1241,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1652,7 +1257,7 @@ length = 0.30001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1664,7 +1269,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1680,7 +1285,7 @@ length = 0.30001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1692,7 +1297,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1708,7 +1313,7 @@ length = 0.20001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:region_rect")
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1720,7 +1325,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:flip_h")
+tracks/1/path = NodePath("Flipper/PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1752,9 +1357,6 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkw6x"]
-size = Vector2(20, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogedt"]
 size = Vector2(20, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8jxu"]
@@ -1789,6 +1391,9 @@ height = 40.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjl8s"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogedt"]
+size = Vector2(20, 32)
+
 [node name="SonicPlayerKinematic" type="CharacterBody2D"]
 unique_name_in_owner = true
 scale = Vector2(4, 4)
@@ -1796,11 +1401,8 @@ collision_layer = 0
 collision_mask = 256
 script = ExtResource("1_w45x4")
 
-[node name="PlayerSprite" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-texture = ExtResource("1_p8in5")
-region_enabled = true
-region_rect = Rect2(15, 18, 22, 32)
+[node name="InputInterpreter" type="Node" parent="."]
+script = ExtResource("23_hljda")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -1808,29 +1410,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_lmqce")
 }
 speed_scale = 1.3
-
-[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("hurtboxArea")]
-script = ExtResource("3_jcdty")
-hurtboxArea = NodePath("HurtboxShape")
-
-[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_nkw6x")
-debug_color = Color(1, 0, 0, 0.419608)
-
-[node name="PlayerCol" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_ogedt")
-
-[node name="TopPushArea" type="Area2D" parent="."]
-
-[node name="Pushbox" type="CollisionShape2D" parent="TopPushArea"]
-position = Vector2(0, -17)
-shape = SubResource("RectangleShape2D_t8jxu")
-debug_color = Color(0.745098, 0.207843, 1, 0.419608)
-
-[node name="InputInterpreter" type="Node" parent="."]
-script = ExtResource("23_hljda")
 
 [node name="PlayerStateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 unique_name_in_owner = true
@@ -1864,76 +1443,91 @@ script = ExtResource("8_ei2dd")
 [node name="PlayerDash" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("13_tyf3s")
 
-[node name="PlayerAtk1" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox")]
+[node name="PlayerAtk1" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("8_qsioo")
-hitbox = NodePath("../../Atk1Hitbox")
 
-[node name="PlayerAtk2" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox")]
+[node name="PlayerAtk2" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("9_k0sqx")
-hitbox = NodePath("../../Atk2Hitbox")
 
-[node name="PlayerAtk3" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox")]
+[node name="PlayerAtk3" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("10_r6i88")
-hitbox = NodePath("../../Atk3Hitbox")
 
-[node name="PlayerAtkUp" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox", "hitbox2", "hitbox3")]
+[node name="PlayerAtkUp" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("11_aw825")
-hitbox = NodePath("../../AtkUpHitbox")
-hitbox2 = NodePath("../../AtkUpHitbox2")
-hitbox3 = NodePath("../../AtkUpHitbox3")
 
-[node name="PlayerAAtkSpike" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox")]
+[node name="PlayerAAtkSpike" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("13_a7tyr")
-hitbox = NodePath("../../AAtkSpikeHitbox")
 
-[node name="PlayerAtkDown" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("hitbox", "hitbox2")]
+[node name="PlayerAtkDown" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("14_icd70")
-hitbox = NodePath("../../AtkDownHitbox")
-hitbox2 = NodePath("../../AtkDownHitbox2")
 
 [node name="PlayerAtkSonicWave" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("18_5uqb2")
 sonicwave = ExtResource("19_4gf3i")
 spawnoffset_x = 100
 
-[node name="Atk1Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="Flipper" type="Node2D" parent="."]
+
+[node name="PlayerSprite" type="Sprite2D" parent="Flipper"]
+unique_name_in_owner = true
+texture = ExtResource("1_p8in5")
+region_enabled = true
+region_rect = Rect2(15, 18, 22, 32)
+
+[node name="Hurtbox" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hurtboxArea")]
+script = ExtResource("3_jcdty")
+hurtboxArea = NodePath("HurtboxShape")
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="Flipper/Hurtbox"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_nkw6x")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="TopPushArea" type="Area2D" parent="Flipper"]
+
+[node name="Pushbox" type="CollisionShape2D" parent="Flipper/TopPushArea"]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_t8jxu")
+debug_color = Color(0.745098, 0.207843, 1, 0.419608)
+
+[node name="Atk1Hitbox" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.3
 hitboxArea = NodePath("Hitbox1")
 
-[node name="Hitbox1" type="CollisionShape2D" parent="Atk1Hitbox"]
+[node name="Hitbox1" type="CollisionShape2D" parent="Flipper/Atk1Hitbox"]
 visible = false
 position = Vector2(20, 0)
 shape = SubResource("CapsuleShape2D_ihn5i")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="Atk2Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="Atk2Hitbox" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.3
 hitboxArea = NodePath("Hitbox1")
 
-[node name="Hitbox1" type="CollisionShape2D" parent="Atk2Hitbox"]
+[node name="Hitbox1" type="CollisionShape2D" parent="Flipper/Atk2Hitbox"]
 visible = false
 position = Vector2(6, 8)
 shape = SubResource("CircleShape2D_xfejo")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="Atk3Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="Atk3Hitbox" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.5
 knockbackY = -500
 hitboxArea = NodePath("Hitbox1")
 
-[node name="Hitbox1" type="CollisionShape2D" parent="Atk3Hitbox"]
+[node name="Hitbox1" type="CollisionShape2D" parent="Flipper/Atk3Hitbox"]
 visible = false
 position = Vector2(12, 4)
 shape = SubResource("CapsuleShape2D_pr1rv")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AtkUpHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="AtkUpHitbox" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
@@ -1941,7 +1535,7 @@ hitboxArea = NodePath("Hitbox1")
 isGrouped = true
 groupName = "AtkUp"
 
-[node name="Hitbox1" type="CollisionShape2D" parent="AtkUpHitbox"]
+[node name="Hitbox1" type="CollisionShape2D" parent="Flipper/AtkUpHitbox"]
 visible = false
 position = Vector2(14, 0)
 rotation = -0.785398
@@ -1949,7 +1543,7 @@ shape = SubResource("CapsuleShape2D_fi0qb")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AtkUpHitbox2" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="AtkUpHitbox2" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
@@ -1957,7 +1551,7 @@ hitboxArea = NodePath("Hitbox2")
 isGrouped = true
 groupName = "AtkUp"
 
-[node name="Hitbox2" type="CollisionShape2D" parent="AtkUpHitbox2"]
+[node name="Hitbox2" type="CollisionShape2D" parent="Flipper/AtkUpHitbox2"]
 visible = false
 position = Vector2(8, -18)
 rotation = -1.5708
@@ -1965,7 +1559,7 @@ shape = SubResource("CapsuleShape2D_iy4ym")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AtkUpHitbox3" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="AtkUpHitbox3" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
@@ -1973,7 +1567,7 @@ hitboxArea = NodePath("Hitbox3")
 isGrouped = true
 groupName = "AtkUp"
 
-[node name="Hitbox3" type="CollisionShape2D" parent="AtkUpHitbox3"]
+[node name="Hitbox3" type="CollisionShape2D" parent="Flipper/AtkUpHitbox3"]
 visible = false
 position = Vector2(-2, -24)
 rotation = 0.959931
@@ -1981,7 +1575,7 @@ shape = SubResource("CapsuleShape2D_kcw5i")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AAtkSpikeHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="AAtkSpikeHitbox" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 damage = 15
 hitstun = 0.5
@@ -1989,7 +1583,7 @@ knockbackY = 1500
 hitboxArea = NodePath("Hitbox1")
 groupName = "AtkSpike"
 
-[node name="Hitbox1" type="CollisionShape2D" parent="AAtkSpikeHitbox"]
+[node name="Hitbox1" type="CollisionShape2D" parent="Flipper/AAtkSpikeHitbox"]
 visible = false
 position = Vector2(6, -8)
 rotation = -1.13446
@@ -1997,7 +1591,7 @@ shape = SubResource("CapsuleShape2D_uf5ou")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AtkDownHitbox" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="AtkDownHitbox" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 damage = 20
 hitstun = 0.4
@@ -2007,14 +1601,14 @@ hitboxArea = NodePath("Hitbox1")
 isGrouped = true
 groupName = "AtkDown"
 
-[node name="Hitbox1" type="CollisionShape2D" parent="AtkDownHitbox"]
+[node name="Hitbox1" type="CollisionShape2D" parent="Flipper/AtkDownHitbox"]
 visible = false
 position = Vector2(15, 0)
 shape = SubResource("CapsuleShape2D_06p60")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
 
-[node name="AtkDownHitbox2" type="Area2D" parent="." node_paths=PackedStringArray("hitboxArea")]
+[node name="AtkDownHitbox2" type="Area2D" parent="Flipper" node_paths=PackedStringArray("hitboxArea")]
 script = ExtResource("9_fucni")
 damage = 20
 hitstun = 0.4
@@ -2024,11 +1618,15 @@ hitboxArea = NodePath("Hitbox1")
 isGrouped = true
 groupName = "AtkDown"
 
-[node name="Hitbox1" type="CollisionShape2D" parent="AtkDownHitbox2"]
+[node name="Hitbox1" type="CollisionShape2D" parent="Flipper/AtkDownHitbox2"]
 visible = false
 shape = SubResource("CapsuleShape2D_cjl8s")
 disabled = true
 debug_color = Color(0.670588, 0.0784314, 0.262745, 0.419608)
+
+[node name="PlayerCol" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ogedt")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerIdleTurn" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="PlayerStateMachine/PlayerMoveTurn" method="_on_animation_finished"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdg6vdfru716o"]
+[gd_scene load_steps=9 format=3 uid="uid://cdg6vdfru716o"]
 
 [ext_resource type="PackedScene" uid="uid://cq2ltssjaa0ya" path="res://characters/Dummy/dummy.tscn" id="1_khq6l"]
+[ext_resource type="Script" uid="uid://cvxs0c3trnxsi" path="res://main_state/test.gd" id="1_mve0j"]
 [ext_resource type="PackedScene" uid="uid://b5ktmlctsbml5" path="res://characters/EmerlEnemy/EmerlEnemy.tscn" id="3_d7ujw"]
 [ext_resource type="PackedScene" uid="uid://dp3i02gf7dvgm" path="res://characters/SonicPlayer/SonicPlayer.tscn" id="3_k4cma"]
 [ext_resource type="Script" uid="uid://c0n8upyuls4qt" path="res://main_state/checkFPS.gd" id="4_uboc8"]
@@ -13,67 +14,72 @@ size = Vector2(1280, 232)
 size = Vector2(16, 16)
 
 [node name="play" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_mve0j")
 
-[node name="Ground" type="StaticBody2D" parent="."]
+[node name="runner" type="Node" parent="."]
+process_mode = 1
+
+[node name="Ground" type="StaticBody2D" parent="runner"]
 position = Vector2(400, 576)
 scale = Vector2(1.64, 1)
 collision_layer = 256
 collision_mask = 256
 
-[node name="GroundCollision" type="CollisionShape2D" parent="Ground"]
+[node name="GroundCollision" type="CollisionShape2D" parent="runner/Ground"]
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_5payx")
 debug_color = Color(0.870588, 0.835294, 0.180392, 0.419608)
 
-[node name="GroundShape" type="Polygon2D" parent="Ground"]
+[node name="GroundShape" type="Polygon2D" parent="runner/Ground"]
 color = Color(0.466667, 0.466667, 0.466667, 1)
 polygon = PackedVector2Array(-640, -128, 640, -128, 640, 128, -640, 128)
 
-[node name="Wall1" type="StaticBody2D" parent="."]
+[node name="Wall1" type="StaticBody2D" parent="runner"]
 position = Vector2(-632, 304)
 scale = Vector2(1, 50)
 collision_layer = 256
 collision_mask = 256
 
-[node name="WallCollision" type="CollisionShape2D" parent="Wall1"]
+[node name="WallCollision" type="CollisionShape2D" parent="runner/Wall1"]
 shape = SubResource("RectangleShape2D_q7ah4")
 
-[node name="Polygon2D" type="Polygon2D" parent="Wall1"]
+[node name="Polygon2D" type="Polygon2D" parent="runner/Wall1"]
 color = Color(0, 1, 1, 1)
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[node name="Wall2" type="StaticBody2D" parent="."]
+[node name="Wall2" type="StaticBody2D" parent="runner"]
 position = Vector2(1448, 304)
 scale = Vector2(1, 50)
 collision_layer = 256
 collision_mask = 256
 
-[node name="WallCollision" type="CollisionShape2D" parent="Wall2"]
+[node name="WallCollision" type="CollisionShape2D" parent="runner/Wall2"]
 shape = SubResource("RectangleShape2D_q7ah4")
 
-[node name="Polygon2D" type="Polygon2D" parent="Wall2"]
+[node name="Polygon2D" type="Polygon2D" parent="runner/Wall2"]
 color = Color(0, 1, 1, 1)
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[node name="Dummy" parent="." instance=ExtResource("1_khq6l")]
+[node name="Dummy" parent="runner" instance=ExtResource("1_khq6l")]
 position = Vector2(46, 342)
 slowdownMod = 20
 
-[node name="EmerlEnemy" parent="." instance=ExtResource("3_d7ujw")]
+[node name="EmerlEnemy" parent="runner" instance=ExtResource("3_d7ujw")]
 position = Vector2(-285, 336)
 
-[node name="SonicPlayer" parent="." instance=ExtResource("3_k4cma")]
+[node name="SonicPlayer" parent="runner" instance=ExtResource("3_k4cma")]
 position = Vector2(-540, 328)
 
-[node name="SceneCam" type="Camera2D" parent="SonicPlayer"]
+[node name="SceneCam" type="Camera2D" parent="runner/SonicPlayer"]
 offset = Vector2(40, 0)
 zoom = Vector2(0.8, 0.8)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
 
-[node name="checkFPS" type="Node" parent="."]
+[node name="checkFPS" type="Node" parent="runner"]
 script = ExtResource("4_uboc8")
 
-[node name="HitHandler" type="Node" parent="."]
+[node name="HitHandler" type="Node" parent="runner"]
 script = ExtResource("5_hbo7h")
