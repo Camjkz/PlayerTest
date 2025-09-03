@@ -1532,7 +1532,6 @@ script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
 hitboxArea = NodePath("Hitbox1")
-isGrouped = true
 groupName = "AtkUp"
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Flipper/AtkUpHitbox"]
@@ -1548,7 +1547,6 @@ script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
 hitboxArea = NodePath("Hitbox2")
-isGrouped = true
 groupName = "AtkUp"
 
 [node name="Hitbox2" type="CollisionShape2D" parent="Flipper/AtkUpHitbox2"]
@@ -1564,7 +1562,6 @@ script = ExtResource("9_fucni")
 hitstun = 0.4
 knockbackY = -1200
 hitboxArea = NodePath("Hitbox3")
-isGrouped = true
 groupName = "AtkUp"
 
 [node name="Hitbox3" type="CollisionShape2D" parent="Flipper/AtkUpHitbox3"]
@@ -1598,7 +1595,6 @@ hitstun = 0.4
 knockbackX = 800
 knockbackY = -900
 hitboxArea = NodePath("Hitbox1")
-isGrouped = true
 groupName = "AtkDown"
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Flipper/AtkDownHitbox"]
@@ -1615,7 +1611,6 @@ hitstun = 0.4
 knockbackX = -800
 knockbackY = -900
 hitboxArea = NodePath("Hitbox1")
-isGrouped = true
 groupName = "AtkDown"
 
 [node name="Hitbox1" type="CollisionShape2D" parent="Flipper/AtkDownHitbox2"]

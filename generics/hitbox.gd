@@ -10,7 +10,6 @@ extends Area2D
 
 
 # if grouped, then only one of these hitboxes can hit a hurtbox at one times
-@export var isGrouped = false
 @export var groupName = ""
 
 func _init() -> void:
