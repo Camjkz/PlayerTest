@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var movespdModOnAtk = 0.3
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var player_statemachine: StateMachine = %PlayerStateMachine
+@onready var flipper : Node2D = %Flipper
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 3

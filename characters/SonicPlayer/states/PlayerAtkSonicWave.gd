@@ -14,6 +14,9 @@ var sonicwavechild : Node2D
 
 var animList : PackedStringArray = []
 
+@onready var waveVFX : PackedScene = preload("res://characters/SonicPlayer/assets/waveVFX.tscn")
+var waveVFXNode : Node2D
+
 func _ready():
 	animList = animPlayer.get_animation_list()
 	#setup_hitboxes()
@@ -23,6 +26,11 @@ func enter():
 	if "atksonicwave" in animList:
 		sonicwavechild = sonicwave.instantiate()
 		projectilespawned = false
+		waveVFXNode = waveVFX.instantiate()
+		
+		owner.flipper.add_child(waveVFXNode)
+		waveVFXNode.position.x -= 7
+		waveVFXNode.position.y += 20
 		animPlayer.play("atksonicwave")
 
 func exit():
@@ -32,7 +40,6 @@ func exit():
 
 func update(_delta: float):
 	var chosenState = ""
-	#handle_anim_side_values()
 	if animPlayer.is_playing():
 		if animPlayer.current_animation_position >= 0.5 && !projectilespawned:
 			print(get_tree().current_scene.name)
