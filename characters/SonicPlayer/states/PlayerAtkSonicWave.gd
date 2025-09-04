@@ -28,9 +28,12 @@ func enter():
 		projectilespawned = false
 		waveVFXNode = waveVFX.instantiate()
 		
-		owner.flipper.add_child(waveVFXNode)
-		waveVFXNode.position.x -= 7
-		waveVFXNode.position.y += 20
+		get_tree().current_scene.add_child(waveVFXNode)
+		waveVFXNode.scale.x = waveVFXNode.scale.x * owner.side * 4
+		waveVFXNode.scale.y *= 4
+		waveVFXNode.global_position = playerSprite.global_position
+		waveVFXNode.position.x -= 28 * owner.side
+		waveVFXNode.position.y += 80
 		animPlayer.play("atksonicwave")
 
 func exit():

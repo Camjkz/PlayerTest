@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dp3i02gf7dvgm"]
+[gd_scene load_steps=55 format=3 uid="uid://dp3i02gf7dvgm"]
 
 [ext_resource type="Texture2D" uid="uid://b8w8ssvevkyrd" path="res://assets/10039_bgremove.png" id="1_p8in5"]
 [ext_resource type="Script" uid="uid://bjqapssd7t0h4" path="res://characters/SonicPlayer/sonic_charscript.gd" id="1_w45x4"]
@@ -1347,6 +1347,47 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_spol5"]
+resource_name = "atksonicwave_2"
+length = 0.400003
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flipper/PlayerSprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(166, 1040, 24, 24), Rect2(193, 1040, 24, 24), Rect2(220, 1040, 24, 24), Rect2(247, 1039, 26, 26)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flipper/PlayerSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flipper/PlayerSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 4)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lmqce"]
 _data = {
 &"RESET": SubResource("Animation_k4770"),
@@ -1356,6 +1397,7 @@ _data = {
 &"atk3": SubResource("Animation_gjjkg"),
 &"atkdown": SubResource("Animation_e67ij"),
 &"atksonicwave": SubResource("Animation_ijybc"),
+&"atksonicwave_2": SubResource("Animation_spol5"),
 &"atkup": SubResource("Animation_ym5ju"),
 &"dash": SubResource("Animation_urt10"),
 &"fall": SubResource("Animation_bj8jv"),
